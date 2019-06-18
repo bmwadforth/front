@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgba(128, 128, 128, 0.5);
+    margin: 0;
+}
+
+.bmwadforth {
+    .container {
+        width: 40%;
+        margin: 0 auto;
+        text-align: center;
+
+        .title {
+            margin-bottom: 50px;
+        }
+
+        .container-inner {
+            display: flex;
+            align-items: start;
+
+            .content {
+                display: flex;
+                flex: 3;
+                width: 50%;
+
+                .articles {
+                    width: 80%;
+                    margin: 0 auto;
+
+                    .article-item {
+                        width: 80%;
+                        margin: 25px auto;
+                        padding: 1em;
+                        background-color: rgba(255, 255, 255, 0.3);
+                        border-radius: 4px;
+                        text-align: center;
+
+                        transition: box-shadow 0.3s ease-in-out;
+
+                        h1 {
+                            margin-bottom: 0.5em;
+                        }
+
+                        sub {
+                            display: inline-block;
+                            background-color: rgba(128, 255, 255, 0.3);
+                            padding: 0.5em;
+                            margin: 0.5em;
+                            border-radius: 4px;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                            box-shadow: 0 0 0 2px rgba(128, 255, 255, 0.3);
+                        }
+
+                    }
+                }
+            }
+
+            .navigation {
+                display: flex;
+                flex: 1;
+                text-align: center;
+
+                .title {
+
+                }
+
+                nav {
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                        h1 {
+                            margin: 50px 0;
+                            font-size: 32px;
+                            transition: color 0.3s ease-in-out;
+                            border-bottom: 2px dashed black;
+
+                            &:hover {
+                                color: rgba(128, 128, 128, 0.3);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
