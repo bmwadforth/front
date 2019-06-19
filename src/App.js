@@ -2,8 +2,9 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import ArticlesComponent from "./Components/Articles";
 import {Link} from "react-router-dom";
+import ArticleView from "./Components/ArticleView";
 
-function App() {
+function App(props) {
     return (
         <div className="bmwadforth">
             <div className="container">
@@ -16,6 +17,7 @@ function App() {
                         <div className="content">
                             <Switch>
                                 <Route exact path="/" component={ArticlesComponent}/>
+                                <Route exact path="/article/:article" component={ArticleView}/>
                             </Switch>
                         </div>
                         <div className="navigation">
