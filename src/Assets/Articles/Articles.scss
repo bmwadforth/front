@@ -1,0 +1,30 @@
+@import "../Variables";
+
+.articles {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+
+    .article-item {
+        background-color: rgba(red, 0.3);;
+        margin: 0 auto 50px 0;
+        padding: 2em;
+        transition: box-shadow $transition-time ease-in-out;
+        border-radius: $border-radius;
+
+        &:hover {
+            box-shadow: 0 0 10px 0 black;
+            border-radius: $border-radius;
+        }
+
+        sub {
+            display: inline-block;
+            margin: 0.5em;
+            padding: 0.5em;
+            background-color: orangered;
+            border-radius: $border-radius;
+
+        }
+
+    }
+}

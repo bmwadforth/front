@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+@import "./Variables";
+
+html {
+    background-color: rgba($background-color, 0.5);
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    h1 {
+        margin: 0 0 0.5em 0;
+    }
+
+    h2, h3 {
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+}
+
+.bmwadforth {
+    .container {
+        width: 30%;
+        margin: 0 auto;
+
+        .title {
+            margin: 1em;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        .container-inner {
+            display: flex;
+            flex-direction: row;
+
+            .content {
+                flex: 5;
+                margin: 1em;
+                @import "./Articles/Articles";
+
+            }
+
+            .navigation {
+                flex: 1;
+                margin: 1em;
+                padding: 1em;
+
+                nav {
+
+                    h1 {
+                        transition: color $transition-time ease-in-out;
+                        margin-bottom: 50px;
+                        font-size: 2em;
+
+                        &:hover {
+                            color: rgba(red, 0.3);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

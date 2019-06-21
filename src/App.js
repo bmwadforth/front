@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import ArticlesComponent from "./Components/Articles";
 import {Link} from "react-router-dom";
 import ArticleView from "./Components/ArticleView";
+import About from "./Components/About";
 
 function App(props) {
     return (
@@ -18,6 +19,7 @@ function App(props) {
                             <Switch>
                                 <Route exact path="/" component={ArticlesComponent}/>
                                 <Route exact path="/article/:article" component={ArticleView}/>
+                                <Route exact path="/about" component={About}/>
                             </Switch>
                         </div>
                         <div className="navigation">

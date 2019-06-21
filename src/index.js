@@ -8,7 +8,7 @@ import rootSaga from "./Actions/index";
 import createSaga from "redux-saga";
 import * as serviceWorker from './serviceWorker';
 import App from './App';
-import "./index.scss"
+import "./Assets/index.scss"
 
 const saga = createSaga();
 const store = createStore(rootReducer, applyMiddleware(saga, logger));
