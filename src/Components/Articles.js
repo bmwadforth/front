@@ -6,7 +6,7 @@ export default function ArticlesComponent(props) {
     const {loading, data, error} = useSelector(store => store.Articles);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch({type: "ARTICLE_FETCH_REQUESTED"});
+        dispatch({type: "ARTICLES_FETCH_REQUESTED"});
     }, []);
 
     return (
