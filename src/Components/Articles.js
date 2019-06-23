@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import ArticleItem from "./ArticleItem";
 
-export default function ArticlesComponent(props) {
+export default function Articles(props) {
     const {data} = useSelector(store => store.Articles);
     const dispatch = useDispatch();
     useEffect(() => {

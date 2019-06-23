@@ -1,7 +1,7 @@
 const initialState = {
-    loading: false,
-    data: {},
-    err: null
+    loading: null,
+    data: {name: "", tags: [], created: ""},
+    error: null
 };
 
 export default function ArticleReducer(state = initialState, action){
@@ -11,7 +11,7 @@ export default function ArticleReducer(state = initialState, action){
         case "ARTICLE_FETCH_SUCCEEDED":
             return {...state, loading: false, data: action.payload};
         case "ARTICLE_FETCH_FAILED":
-            return {...state, loading: false, err: action.payload};
+            return {...state, loading: false, error: action.payload};
         default:
             return state;
     }

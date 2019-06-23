@@ -40,6 +40,14 @@ body {
                 flex: 5;
                 margin: 1em;
                 @import "./Articles/Articles";
+
+                sub {
+                    display: inline-block;
+                    margin: 0.5em;
+                    padding: 0.5em;
+                    background-color: $core-primary;
+                    border-radius: $border-radius;
+                }
             }
 
             .navigation {

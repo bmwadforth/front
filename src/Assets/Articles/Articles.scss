@@ -16,14 +16,5 @@
             background-color: rgba($core-secondary, 0.2);
             border-radius: $border-radius;
         }
-
-        sub {
-            display: inline-block;
-            margin: 0.5em;
-            padding: 0.5em;
-            background-color: $core-primary;
-            border-radius: $border-radius;
-        }
-
     }
 }
