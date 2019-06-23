@@ -1,0 +1,17 @@
+@import "Variables";
+
+nav {
+    text-align: center;
+    h1 {
+        margin-bottom: 50px;
+        font-weight: normal;
+        padding: 0.25em;
+        border-radius: $border-radius;
+        transition: $transition-standard;
+
+        &:hover {
+            background-color: rgba($core-secondary, 0.3);
+            border-radius: $border-radius;
+        }
+    }
+}

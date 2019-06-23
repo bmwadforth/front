@@ -5,9 +5,9 @@ export default function ArticleView(props){
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({type: "ARTICLE_FETCH_REQUESTED", payload: props.match.params.article});
-    }, []);
+    }, [dispatch, props.match.params.article]);
 
-    const {data, loading, error} = useSelector(store => store.Article);
+    const {data} = useSelector(store => store.Article);
 
     return (
         <div className="article-view">

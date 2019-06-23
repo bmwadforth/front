@@ -3,11 +3,11 @@ import {useDispatch, useSelector} from "react-redux";
 import ArticleItem from "./ArticleItem";
 
 export default function ArticlesComponent(props) {
-    const {loading, data, error} = useSelector(store => store.Articles);
+    const {data} = useSelector(store => store.Articles);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({type: "ARTICLES_FETCH_REQUESTED"});
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className="articles">

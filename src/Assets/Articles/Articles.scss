@@ -6,14 +6,14 @@
     margin: auto;
 
     .article-item {
-        background-color: rgba(red, 0.3);;
+        border: $border-standard;
         margin: 0 auto 50px 0;
         padding: 2em;
-        transition: box-shadow $transition-time ease-in-out;
+        transition: $transition-standard;
         border-radius: $border-radius;
 
         &:hover {
-            box-shadow: 0 0 10px 0 black;
+            background-color: rgba($core-secondary, 0.2);
             border-radius: $border-radius;
         }
 
@@ -21,9 +21,8 @@
             display: inline-block;
             margin: 0.5em;
             padding: 0.5em;
-            background-color: orangered;
+            background-color: $core-primary;
             border-radius: $border-radius;
-
         }
 
     }

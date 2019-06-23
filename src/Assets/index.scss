@@ -2,7 +2,6 @@
 @import "./Variables";
 
 html {
-    background-color: rgba($background-color, 0.5);
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -41,27 +40,14 @@ body {
                 flex: 5;
                 margin: 1em;
                 @import "./Articles/Articles";
-
             }
 
             .navigation {
                 flex: 1;
                 margin: 1em;
-                padding: 1em;
-
-                nav {
-
-                    h1 {
-                        transition: color $transition-time ease-in-out;
-                        margin-bottom: 50px;
-                        font-size: 2em;
-
-                        &:hover {
-                            color: rgba(red, 0.3);
-                        }
-                    }
-                }
-
+                padding: 2em;
+                border-left: 2px dashed black;
+                @import "./Navigation";
             }
         }
     }

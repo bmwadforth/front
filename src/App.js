@@ -11,7 +11,7 @@ function App(props) {
             <div className="container">
                 <div className="title">
                     <h1>Brannon Wadforth</h1>
-                    <h2>Software Developer | Ethical Hacker 👨‍💻 </h2>
+                    <h2><span role="img" aria-label="Kangaroo">🦘</span> Australian | Software Developer | Ethical Hacker <span role="img" aria-label="Hackerman">👨‍💻</span></h2>
                 </div>
                 <div className="container-inner">
                     <Router>

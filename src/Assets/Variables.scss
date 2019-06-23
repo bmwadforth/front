@@ -1,3 +1,12 @@
-$background-color: #000;
+$background-color: #242C2E;
 $transition-time: 0.3s;
 $border-radius: 4px;
+
+
+//Articles
+$core-primary: #F7DD60;
+$core-secondary: #ED5248;
+
+$border-standard: 2px solid $core-primary;
+$box-shadow-standard: 0 0 5px 0 black;
+$transition-standard: all $transition-time ease-in-out;
