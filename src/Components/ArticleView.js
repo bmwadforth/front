@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import moment from "moment";
+import marked from "marked";
 
 export default function ArticleView(props) {
     const dispatch = useDispatch();
@@ -9,6 +10,15 @@ export default function ArticleView(props) {
     }, [dispatch, props.match.params.article]);
 
     const {loading, data} = useSelector(store => store.Article);
+
+    function markdownToHtml(){
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            sanitize: true
+        });
+
+        return marked(data.content.data);
+    }
 
     return (
         <div className="article-view">
@@ -21,8 +31,7 @@ export default function ArticleView(props) {
                             return <sub key={idx}>{tag}</sub>
                         })}
                     </div>
-                    <div className="article-content">
-                    </div>
+                    <div className="article-content" dangerouslySetInnerHTML={{__html: markdownToHtml()}} />
                 </>
             }
         </div>

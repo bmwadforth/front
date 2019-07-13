@@ -1,6 +1,6 @@
 const initialState = {
     loading: null,
-    data: {name: "", tags: [], created: ""},
+    data: {name: "", tags: [], content: {data: ""}, created: ""},
     error: null
 };
 

@@ -1,0 +1,12 @@
+@import "../Variables";
+
+.article-view {
+    .article-title {
+        padding-bottom: 1em;
+        border-bottom: 2px solid $core-primary;
+    }
+
+    .article-content {
+        margin-top: 2em;
+    }
+}

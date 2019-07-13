@@ -23,7 +23,7 @@ body {
 
 .bmwadforth {
     .container {
-        width: 30%;
+        width: 40%;
         margin: 0 auto;
 
         .title {
@@ -40,6 +40,7 @@ body {
                 flex: 5;
                 margin: 1em;
                 @import "./Articles/Articles";
+                @import "./Articles/ArticleView";
 
                 sub {
                     display: inline-block;
