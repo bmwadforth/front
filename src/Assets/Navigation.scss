@@ -5,10 +5,10 @@ nav {
     h1 {
         margin-bottom: 50px;
         font-weight: normal;
-        padding: 0.25em;
+        padding: 0.5em;
         border-radius: $border-radius;
         transition: $transition-standard;
-        background-color: $core-primary;
+        border: 2px solid $core-primary;
 
         &:hover {
             background-color: rgba($core-primary, 0.3);
