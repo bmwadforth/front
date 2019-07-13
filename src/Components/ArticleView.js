@@ -9,7 +9,7 @@ export default function ArticleView(props) {
         dispatch({type: "ARTICLE_FETCH_REQUESTED", payload: props.match.params.article});
     }, [dispatch, props.match.params.article]);
 
-    const {loading, data} = useSelector(store => store.Article);
+    const {loading, data, error} = useSelector(store => store.Article);
 
     function markdownToHtml(){
         marked.setOptions({
@@ -31,7 +31,13 @@ export default function ArticleView(props) {
                             return <sub key={idx}>{tag}</sub>
                         })}
                     </div>
-                    <div className="article-content" dangerouslySetInnerHTML={{__html: markdownToHtml()}} />
+
+                    <div className="article-content">
+                        {(error && !loading) &&
+                        <h1>An Error Has Occurred <span role="img" aria-label="Error">🚫</span></h1>}
+
+                        <div dangerouslySetInnerHTML={{__html: markdownToHtml()}} />
+                    </div>
                 </>
             }
         </div>
