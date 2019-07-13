@@ -8,9 +8,10 @@ nav {
         padding: 0.25em;
         border-radius: $border-radius;
         transition: $transition-standard;
+        background-color: $core-primary;
 
         &:hover {
-            background-color: rgba($core-secondary, 0.3);
+            background-color: rgba($core-primary, 0.3);
             border-radius: $border-radius;
         }
     }

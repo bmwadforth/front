@@ -9,7 +9,7 @@ export default function About(props){
             <p>
                 Security is incredibly important. A good example of security is something we often overlook - the lock(s) on a primary door of a building.
                 We use locks for the purposes of physical security, pretty obvious. Much like how there are multiple entry points to a house, there are multiple entry points in a computer program. You lock your doors at night to mitigate
-                the risk of someone breaking into your home, similarly, there are steps we can take to mitigate the risk of someone with nefarious intentions from compromising a computer system.
+                the risk of someone breaking into your home. Similarly, there are steps we can take to mitigate the risk of someone with nefarious intentions from compromising a computer system.
             </p>
         </div>
     );
