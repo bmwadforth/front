@@ -1,5 +1,9 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:8000";
+if(process.env.NODE_ENV === "production") {
+    axios.defaults.baseURL = "https://bmwadforth.com";
+} else {
+    axios.defaults.baseURL = "http://localhost:8000";
+}
 
 export default axios;
