@@ -1,6 +1,7 @@
 @import "../Variables";
 
 .article-view {
+    width: 100%;
     .article-title {
         padding-bottom: 1em;
         border-bottom: 2px solid $core-primary;
@@ -8,5 +9,9 @@
 
     .article-content {
         margin-top: 2em;
+
+        pre {
+            white-space: pre-wrap;
+        }
     }
 }

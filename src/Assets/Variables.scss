@@ -8,3 +8,9 @@ $core-secondary: #ED5248;
 $border-standard: 2px solid $core-primary;
 $box-shadow-standard: 0 0 5px 0 black;
 $transition-standard: all $transition-time ease-in-out;
+
+//Screens
+$large-screen: 1500px;
+$medium-screen: 1000px;
+$small-screen: 800px;
+$very-small-screen: 600px;

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
 @import "./Variables";
+@import "Queries";
 
 html {
     margin: 0;
@@ -37,6 +38,9 @@ body {
             flex-direction: row;
 
             .content {
+                width: 40%;
+                overflow-wrap: break-word;
+                word-break: break-word;
                 flex: 5;
                 margin: 1em;
                 @import "./Articles/Articles";

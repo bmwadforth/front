@@ -1,0 +1,62 @@
+@import "Variables";
+
+@media screen and (max-width: $large-screen) {
+    html {
+        .bmwadforth {
+            .container {
+                width: 60%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $medium-screen) {
+    html {
+        .bmwadforth {
+            .container {
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $small-screen) {
+    html {
+        .bmwadforth {
+            .container {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $very-small-screen) {
+    html {
+        .bmwadforth {
+            .container {
+                width: 100%;
+
+                .title {
+                    h2 {
+                        font-size: 14px;
+                    }
+                }
+
+                .container-inner {
+                    padding: 0.5em;
+                    flex-direction: column-reverse;
+
+                    .navigation {
+                        border-left: 0;
+                        padding: 0;
+                    }
+
+                    .content {
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
