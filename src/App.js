@@ -6,6 +6,7 @@ import Articles from "./Components/Articles/Articles";
 import Navigation from "./Components/Navigation/Navigation";
 import Projects from "./Components/Projects";
 import About from "./Components/About";
+import Article from "./Components/Articles/Article";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                                 <Switch>
                                     <Route exact path={CLIENT_ROUTES.HOME} component={Home}/>
                                     <Route exact path={CLIENT_ROUTES.ARTICLES} component={Articles}/>
+                                    <Route exact path={CLIENT_ROUTES.ARTICLE()} component={Article}/>
                                     <Route exact path={CLIENT_ROUTES.PROJECTS} component={Projects}/>
                                     <Route exact path={CLIENT_ROUTES.ABOUT} component={About}/>
                                 </Switch>

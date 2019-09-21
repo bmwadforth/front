@@ -29,13 +29,20 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: minmax(min-content, max-content);
 
+
         .article-item {
             border: 2px solid rgba($dark, 1);
             background-color: rgba($dark, 1);
             color: $light;
-            padding: 1.5em;
             margin: 1em;
             border-radius: $border-radius;
+
+            a {
+                display: block;
+                padding: 1.5em;
+                height: 100%;
+                width: 100%;
+            }
 
             p {
                 margin: 1em 0;

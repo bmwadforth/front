@@ -12,4 +12,8 @@ input, textarea, select {
         cursor: pointer;
         border: 2px solid rgba(128, 128, 128, 1);
     }
+
+    &:focus {
+        border: 2px solid $primary;
+    }
 }
