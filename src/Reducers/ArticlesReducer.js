@@ -2,6 +2,7 @@ import {ACTION_TYPES} from "../Actions/Types";
 
 const initialState = {
     loading: false,
+    fetched: false,
     data: [],
     error: null
 };
@@ -12,13 +13,16 @@ export default function ArticlesReducer(state = initialState, action){
             return {
                 ...state,
                 loading: true,
+                fetched: false,
+                data: [],
                 error: null
             };
         case ACTION_TYPES.ARTICLES.FETCH.SUCCESS:
             return {
                 ...state,
                 loading: false,
-                data: action.payload
+                fetched: true,
+                data: action.payload.data
             };
         case ACTION_TYPES.ARTICLES.FETCH.FAILED:
             return {

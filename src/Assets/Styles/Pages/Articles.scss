@@ -2,10 +2,72 @@
 
 .articles {
     .search-bar {
-        width: 20%;
+        width: 50%;
         margin: 0 auto;
+
         input {
+            height: 50px;
             width: 100%;
+            font-size: 22px;
+        }
+    }
+
+    .alert-wrap {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 50px;
+
+        .alert {
+            width: 400px;
+        }
+    }
+
+    .article-list {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(min-content, max-content);
+
+        .article-item {
+            border: 2px solid rgba($dark, 1);
+            background-color: rgba($dark, 1);
+            color: $light;
+            padding: 1.5em;
+            margin: 1em;
+            border-radius: $border-radius;
+
+            p {
+                margin: 1em 0;
+            }
+
+            .article-tags {
+                margin: 1em 0;
+
+                .article-tag {
+                    display: inline-block;
+                    background-color: rgba($warning, 1);
+                    color: $dark;
+                    padding: 0.25em 0.5em;
+                    margin: 0.25em 0.5em 0.5em 0;
+                    border-radius: $border-radius;
+                    transition: background-color $transition-time ease-in-out, color $transition-time ease-in-out;
+                }
+            }
+
+            transition: border $transition-time ease-in-out, background-color $transition-time ease-in-out, color $transition-time ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: $dark;
+                background-color: rgba($dark, 0);
+                border: 2px solid rgba($dark, 1);
+
+                .article-tag {
+                    background-color: $dark;
+                    color: $light;
+                }
+            }
         }
     }
 

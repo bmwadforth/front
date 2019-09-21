@@ -26,6 +26,7 @@ html, body {
 
 .bmwadforth {
     @import "Utility/Button";
+    @import "Utility/Alert";
     @import "Utility/Form/WebForm";
     @import "Utility/Form/Field";
     .wrap {

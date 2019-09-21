@@ -1,0 +1,35 @@
+@import "../Variables";
+
+.alert {
+    display: flex;
+    min-height: 80px;
+    padding: 1em;
+    background-color: $primary;
+    border-left: 7px solid $primary;
+    border-radius: $border-radius;
+    color: $dark;
+    p {
+        display: flex;
+        align-items: center;
+        .icon {
+            svg {
+                height: 30px;
+            }
+        }
+    }
+
+    &.alert-success {
+        background-color: rgba($success, 0.5);
+        border-left: 7px solid $success;
+    }
+
+    &.alert-warning {
+        background-color: rgba($warning, 0.5);
+        border-left: 7px solid $warning;
+    }
+
+    &.alert-danger {
+        background-color: rgba($danger, 0.5);
+        border-left: 7px solid $danger;
+    }
+}
