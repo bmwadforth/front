@@ -1,0 +1,30 @@
+@import "../Variables";
+
+button {
+    padding: 0.5em 1.5em;
+    margin: 1em 0;
+    outline: 0;
+    border-radius: $border-radius;
+    border: 2px solid $primary;
+    background-color: $primary;
+    color: $light;
+
+    &.button-success {
+
+    }
+
+    &.button-warning {
+
+    }
+
+    &.button-danger {
+
+    }
+
+    transition: background-color $transition-time ease-in-out, color $transition-time ease-in-out;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba($primary, 0);
+        color: $dark;
+    }
+}

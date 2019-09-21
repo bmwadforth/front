@@ -1,0 +1,46 @@
+@import "Variables";
+
+nav.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .navigation-wrap {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+
+            li {
+                margin: 1em 2em;
+                font-size: 22px;
+                background-color: rgba($dark, 0.1);
+                border: 2px solid rgba($dark, 0);
+                border-radius: $border-radius;
+                a {
+                    display: block;
+                    padding: 0.5em 2em;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                transition: border $transition-time ease-in-out;
+                &:hover {
+                    cursor: pointer;
+                    border: 2px solid $primary;
+                }
+
+                &.active {
+                    border: 2px solid $primary;
+                }
+            }
+        }
+    }
+
+}

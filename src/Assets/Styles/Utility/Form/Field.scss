@@ -1,0 +1,15 @@
+@import "../../Variables";
+
+input, textarea, select {
+    outline: none;
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    background-color: rgba($light, 1);
+    padding: 0.5em 1em;
+    border-radius: $border-radius;
+
+    transition: border $transition-time ease-in-out;
+    &:hover {
+        cursor: pointer;
+        border: 2px solid rgba(128, 128, 128, 1);
+    }
+}

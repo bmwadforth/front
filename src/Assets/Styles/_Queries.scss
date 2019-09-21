@@ -1,0 +1,34 @@
+@import "Variables";
+
+@media only screen and (max-width: 900px) {
+    .bmwadforth {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .bmwadforth {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #root {
+        .bmwadforth {
+            width: 90%;
+            margin-top: 25px;
+
+            .wrap {
+                .navigation {
+                    ul {
+                        align-items: center;
+                        flex-direction: column;
+                        li {
+                            margin: 0.5em 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
