@@ -1,0 +1,16 @@
+@import "../Variables";
+
+.about {
+    .graduate {
+        display: flex;
+        justify-content: center;
+        svg {
+            height: 400px;
+
+        }
+    }
+
+    p {
+        margin: 1em 0;
+    }
+}
