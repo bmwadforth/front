@@ -11,19 +11,14 @@
         font-weight: normal;
     }
 
-    .main {
-        margin: 0;
-    }
-
     .background {
         position: absolute;
-        display: flex;
-        height: 100%;
-        width: 40%;
-        background: url("../../Vectors/flame-design-science.svg");
-        background-repeat: no-repeat;
-        background-position: top left;
+        top: 0;
+        left: 0;
         z-index: 1;
+        svg {
+            height: 800px;
+        }
     }
 
     .banner {

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 export default function NavLink(props) {
     return (
-        <li className={`${props.active ? "active" : "inactive"}`} onClick={e => props.onClick(e)}>
+        <li className={`${props.active ? "active" : "inactive"}`} onClick={e => {props.onClick(window.location.pathname)}}>
             <Link to={props.link}>
                 {props.title}
             </Link>
@@ -13,6 +13,6 @@ export default function NavLink(props) {
 }
 
 NavLink.propTypes = {
-    onClick: PropTypes.func.isRequired,
-    active: PropTypes.bool.isRequired
+    active: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired
 };
