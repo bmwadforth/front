@@ -53,8 +53,7 @@
 
                 .article-tag {
                     display: inline-block;
-                    background-color: rgba($warning, 1);
-                    color: $dark;
+                    background-color: rgba($danger, 1);
                     padding: 0.25em 0.5em;
                     margin: 0.25em 0.5em 0.5em 0;
                     border-radius: $border-radius;
@@ -72,8 +71,8 @@
                 box-shadow: rgba($dark, 0.25) 0 20px 40px;
 
                 .article-tag {
-                    background-color: $danger;
-                    color: $light;
+                    background-color: $warning;
+                    color: $dark;
                 }
             }
         }
