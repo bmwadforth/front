@@ -1,19 +1,15 @@
 @import "../Variables";
 
 .home {
-    background-color: $danger;
     height: calc(100vh - #{$navigation-height});
 
     .background {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        bottom: 0;
-        width: 100%;
+        top: 0;
         z-index: 1;
         margin-top: $navigation-height;
         svg {
-            height: 800px;
+            height: 600px;
         }
     }
 
@@ -25,7 +21,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        color: $light;
         font-size: 24px;
         h1, h2 {
             font-weight: lighter;

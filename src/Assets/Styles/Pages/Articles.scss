@@ -2,7 +2,7 @@
 
 .articles {
     .search-bar {
-        width: 50%;
+        width: 100%;
         margin: 0 auto;
 
         input {
@@ -32,9 +32,9 @@
 
         .article-item {
             border: 2px solid rgba($dark, 1);
-            background-color: rgba($light, 1);
-            color: $dark;
-            margin: 1em;
+            background-color: rgba($dark, 1);
+            color: $light;
+            margin: 0 1em 1em 0;
             border-radius: $border-radius;
 
             a {
@@ -62,13 +62,14 @@
                 }
             }
 
-            transition: border $transition-time ease-in-out, background-color $transition-time ease-in-out, color $transition-time ease-in-out;
+            transition: transform $transition-time ease-in-out, box-shadow $transition-time ease-in-out;
 
             &:hover {
                 cursor: pointer;
-                color: $dark;
-                background-color: rgba($dark, 0);
-                border: 2px solid rgba($danger, 1);
+                //background-color: rgba($dark, 0);
+                //border: 2px solid rgba($danger, 1);
+                transform: translate3d(0px, -3px, 0px);
+                box-shadow: rgba($dark, 0.25) 0 20px 40px;
 
                 .article-tag {
                     background-color: $danger;
