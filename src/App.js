@@ -7,6 +7,21 @@ import Navigation from "./Components/Navigation/Navigation";
 import Projects from "./Components/Projects";
 import About from "./Components/About";
 import Article from "./Components/Articles/Article";
+import {ReactComponent as NotFoundVector} from "./Assets/Vectors/page-not-found-4.svg";
+
+function NotFound(){
+    return (
+        <div className="not-found">
+            <div className="not-found-text">
+                <h1>Uh Oh.</h1>
+                <h2>Sorry, I couldn't find that.</h2>
+            </div>
+            <div className="not-found-vector">
+                <NotFoundVector/>
+            </div>
+        </div>
+    )
+}
 
 function App() {
     return (
@@ -22,6 +37,7 @@ function App() {
                                 <Route exact path={CLIENT_ROUTES.ARTICLE()} component={Article}/>
                                 <Route exact path={CLIENT_ROUTES.PROJECTS} component={Projects}/>
                                 <Route exact path={CLIENT_ROUTES.ABOUT} component={About}/>
+                                <Route component={NotFound}/>
                             </Switch>
                         </div>
                     </section>
