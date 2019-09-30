@@ -5,6 +5,10 @@ nav.navigation {
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-height: $navigation-height;
+    background-color: $danger;
+    border-bottom: 2px solid $light;
+    color:  $light;
 
     .navigation-wrap {
         display: flex;
@@ -33,11 +37,11 @@ nav.navigation {
                 transition: border $transition-time ease-in-out;
                 &:hover {
                     cursor: pointer;
-                    border: 2px solid $primary;
+                    border: 2px solid $warning;
                 }
 
                 &.active {
-                    border: 2px solid $primary;
+                    border: 2px solid $light;
                 }
             }
         }

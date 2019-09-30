@@ -8,14 +8,14 @@ import Projects from "./Components/Projects";
 import About from "./Components/About";
 import Article from "./Components/Articles/Article";
 
-function App(props) {
+function App() {
     return (
         <div className="bmwadforth">
             <div className="wrap">
                 <Router>
-                    <Route exact path={CLIENT_ROUTES.HOME} component={Home}/>
                     <section className="main">
                         <Navigation/>
+                        <Route exact path={CLIENT_ROUTES.HOME} component={Home}/>
                         <div className="content">
                             <Switch>
                                 <Route exact path={CLIENT_ROUTES.ARTICLES} component={Articles}/>

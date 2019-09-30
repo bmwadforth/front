@@ -36,8 +36,8 @@ html, body {
 
         section.main {
             .content {
-                width: 70%;
-                margin: 25px auto 0;
+                width: 50%;
+                margin: $view-port-margin-top auto 0;
                 @import "Pages/Articles";
                 @import "Pages/About";
             }

@@ -13,20 +13,22 @@ export default function ArticleList(props) {
     }, []);
 
     return (
-        <div className="article-list">
+        <>
             {loading && <h1>Loading</h1>}
             {error && <Alert title={error} status="danger"/>}
             {(!data.length && fetched) && <Alert title="No Articles" status="warning"/>}
-            {data.map(article => {
-                return <ArticleItem
-                    key={article.id}
-                    id={article.id}
-                    title={article.title}
-                    description={article.description}
-                    tags={article.tags}
-                    file={article.fieRef}
-                    created={article.created}/>
-            })}
-        </div>
+            <div className="article-list">
+                {data.map(article => {
+                    return <ArticleItem
+                        key={article.id}
+                        id={article.id}
+                        title={article.title}
+                        description={article.description}
+                        tags={article.tags}
+                        file={article.fieRef}
+                        created={article.created}/>
+                })}
+            </div>
+        </>
     )
 }

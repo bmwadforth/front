@@ -1,48 +1,39 @@
 @import "../Variables";
 
 .home {
-    position: absolute;
     background-color: $danger;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    h1, h2 {
-        font-weight: normal;
-    }
+    height: calc(100vh - #{$navigation-height});
 
     .background {
         position: absolute;
-        top: 0;
-        left: 0;
+        display: flex;
+        justify-content: center;
+        bottom: 0;
+        width: 100%;
         z-index: 1;
+        margin-top: $navigation-height;
         svg {
             height: 800px;
         }
     }
 
-    .banner {
+    .title {
         position: relative;
-        z-index: 5;
+        z-index: 2;
         display: flex;
         height: 100%;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         color: $light;
-
-        .navigation {
-            .navigation-wrap {
-                ul {
-                    margin-top: 1em;
-                    li {
-                        margin: 0.5em 1em;
-                        &:hover, &.active {
-                            border: 2px solid $warning;
-                        }
-                    }
-                }
+        font-size: 24px;
+        h1, h2 {
+            font-weight: lighter;
+            transition: color $transition-time ease-in-out;
+            &:hover {
+                color: $warning;
             }
         }
     }
+
 }

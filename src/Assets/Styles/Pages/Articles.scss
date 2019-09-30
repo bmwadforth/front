@@ -19,7 +19,7 @@
         margin-top: 50px;
 
         .alert {
-            width: 400px;
+            width: 50%;
         }
     }
 
@@ -32,8 +32,8 @@
 
         .article-item {
             border: 2px solid rgba($dark, 1);
-            background-color: rgba($dark, 1);
-            color: $light;
+            background-color: rgba($light, 1);
+            color: $dark;
             margin: 1em;
             border-radius: $border-radius;
 
@@ -68,10 +68,10 @@
                 cursor: pointer;
                 color: $dark;
                 background-color: rgba($dark, 0);
-                border: 2px solid rgba($dark, 1);
+                border: 2px solid rgba($danger, 1);
 
                 .article-tag {
-                    background-color: $dark;
+                    background-color: $danger;
                     color: $light;
                 }
             }
