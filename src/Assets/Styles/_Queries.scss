@@ -1,30 +1,169 @@
 @import "Variables";
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1700px) {
     .bmwadforth {
-        width: 70%;
+        .wrap {
+            section.main {
+                .content {
+                    width: 70%;
+                }
+            }
+        }
     }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1500px) {
     .bmwadforth {
-        width: 80%;
+        .wrap {
+            section.main {
+                .content {
+                    width: 80%;
+                }
+            }
+        }
     }
 }
 
-@media only screen and (max-width: 400px) {
-    #root {
-        .bmwadforth {
-            width: 90%;
-            margin-top: 25px;
+@media only screen and (max-width: 1300px) {
+    .bmwadforth {
+        .wrap {
+            section.main {
+                nav.navigation {
+                    .navigation-wrap {
+                        ul {
+                            li {
+                                margin: 1em;
+                            }
+                        }
+                    }
+                }
+                .content {
+                    width: 80%;
+                    .home {
+                         .title {
+                             align-items: center;
+                         }
+                        .banner {
+                            .banner-background {
+                                background-image: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
-            .wrap {
-                .navigation {
-                    ul {
-                        align-items: center;
-                        flex-direction: column;
-                        li {
-                            margin: 0.5em 0;
+
+@media only screen and (max-width: 1000px) {
+    .bmwadforth {
+        .wrap {
+            section.main {
+                nav.navigation {
+                    $navigation-height: 400px;
+                    .navigation-wrap {
+                        ul {
+                            width: 100%;
+                            flex-direction: column;
+                            li {
+                                margin: 0.5em auto;
+                                width: 80%;
+                                a {
+                                    text-align: center;
+                                    padding: 0.5em;
+                                }
+
+                            }
+                        }
+                    }
+                }
+                .content {
+                    width: 90%;
+                    .not-found {
+                        .not-found-text {
+                            margin-right: 50px;
+                        }
+                        .not-found-vector {
+                            svg {
+                                height: 350px;
+                            }
+                        }
+                    }
+                    .banner {
+                        display: none;
+                    }
+
+                    .title {
+                        color: $dark;
+                    }
+
+                    .articles {
+                        .article-list {
+                            grid-template-columns: repeat(1, 1fr);
+                        }
+                    }
+
+                    .article {
+                        .article-tags {
+                            .article-tag {
+                                margin: 0.25em;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .bmwadforth {
+        .wrap {
+            section.main {
+                .content {
+                    .not-found {
+                        .not-found-text {
+                            font-size: 18px;
+                        }
+                        .not-found-vector {
+                            svg {
+                                height: 250px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .bmwadforth {
+        .wrap {
+            section.main {
+                .content {
+                    .home {
+                        .title {
+                            justify-content: flex-start;
+                            h2 {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                    .not-found {
+                        text-align: center;
+                        .not-found-text {
+                            font-size: 18px;
+                            margin: 0;
+                        }
+                        .not-found-vector {
+                            display: none;
+                            svg {
+                                height: 250px;
+                            }
                         }
                     }
                 }
