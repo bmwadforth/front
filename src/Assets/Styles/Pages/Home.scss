@@ -1,27 +1,37 @@
 @import "../Variables";
 
 .home {
-    height: calc(100vh - #{$navigation-height});
-    background-color: $danger;
-    border-top: 2px solid $light;
+    height: calc(100vh - #{$navigation-height} - #{$view-port-margin-top});
 
-    .background {
+    .banner {
         position: absolute;
-        top: 0;
-        z-index: 1;
-        margin-top: $navigation-height;
-        svg {
-            height: 600px;
+        top: $navigation-height;
+        left: 0;
+        height: calc(100vh - #{$navigation-height});
+        width: 100%;
+        border-top: 2px solid $light;
+        background-color: $danger;
+
+        .banner-background {
+            height: 100%;
+            background: url("../../Vectors/flame-design-science.svg");
+            background-repeat: no-repeat;
+            background-position: center right;
+
+            transition: transform $transition-time ease-in-out;
+            &:hover {
+                transform: translate(-2.5px, 0);
+            }
         }
     }
 
     .title {
+        color: $light;
         position: relative;
-        z-index: 2;
         display: flex;
         height: 100%;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
         font-size: 24px;
         h1, h2 {
@@ -30,6 +40,10 @@
             &:hover {
                 color: $warning;
             }
+        }
+
+        strong {
+            color: $warning;
         }
     }
 

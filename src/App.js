@@ -4,13 +4,12 @@ import {CLIENT_ROUTES} from "./Constants";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Articles from "./Components/Articles/Articles";
 import Navigation from "./Components/Navigation/Navigation";
-import Projects from "./Components/Projects";
 import About from "./Components/About";
 import Article from "./Components/Articles/Article";
 import {ReactComponent as NotFoundVector} from "./Assets/Vectors/page-not-found-4.svg";
 import Admin from "./Components/Admin/Admin";
 
-function NotFound(){
+function NotFound() {
     return (
         <div className="not-found">
             <div className="not-found-text">
@@ -28,22 +27,22 @@ function App() {
     return (
         <div className="bmwadforth">
             <div className="wrap">
-                <Router>
-                    <section className="main">
+                <section className="main">
+                    <Router>
                         <Navigation/>
-                        <Route exact path={CLIENT_ROUTES.HOME} component={Home}/>
                         <div className="content">
                             <Switch>
-                                <Route exact path={CLIENT_ROUTES.ARTICLES} component={Articles}/>
-                                <Route exact path={CLIENT_ROUTES.ARTICLE()} component={Article}/>
+                                <Route exact path={CLIENT_ROUTES.HOME} component={Home}/>
+                                <Route path={CLIENT_ROUTES.ARTICLES} component={Articles}/>
+                                <Route path={CLIENT_ROUTES.ARTICLE()} component={Article}/>
                                 {/*<Route exact path={CLIENT_ROUTES.PROJECTS} component={Projects}/>*/}
-                                <Route exact path={CLIENT_ROUTES.ABOUT} component={About}/>
-                                <Route exact path={CLIENT_ROUTES.ADMIN} component={Admin}/>
+                                <Route path={CLIENT_ROUTES.ABOUT} component={About}/>
+                                <Route path={CLIENT_ROUTES.ADMIN} component={Admin}/>
                                 <Route component={NotFound}/>
                             </Switch>
                         </div>
-                    </section>
-                </Router>
+                    </Router>
+                </section>
             </div>
         </div>
     );
