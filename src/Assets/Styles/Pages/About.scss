@@ -12,5 +12,34 @@
 
     p {
         margin: 1em 0;
+        font-size: 18px;
+    }
+
+    .social {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        border-top: 2px solid $danger;
+
+        span {
+            padding: 1em;
+            a {
+                display: block;
+                svg {
+                    path {
+                        transition: fill $transition-time ease-in-out;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $danger !important;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

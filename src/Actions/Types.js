@@ -5,5 +5,22 @@ export const ACTION_TYPES = {
             SUCCESS: "ARTICLES_FETCH_SUCCESS",
             FAILED: "ARTICLES_FETCH_FAILED"
         }
+    },
+    ADMIN: {
+        AUTHENTICATION: {
+            START: "ADMIN_AUTH_START",
+            SUCCESS: "ADMIN_AUTH_SUCCESS",
+            FAILED: "ADMIN_AUTH_FAILED"
+        },
+        MODIFY_ARTICLE: {
+            START: "MODIFY_ARTICLE_START",
+            SUCCESS: "MODIFY_ARTICLE_SUCCESS",
+            FAILED: "MODIFY_ARTICLE_FAILED"
+        },
+        NEW_ARTICLE: {
+            START: "NEW_ARTICLE_START",
+            SUCCESS: "NEW_ARTICLE_SUCCESS",
+            FAILED: "NEW_ARTICLE_FAILED"
+        }
     }
 };

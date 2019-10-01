@@ -13,5 +13,6 @@ export const CLIENT_ROUTES = {
         }
     },
     PROJECTS: "/projects",
-    ABOUT: "/about"
+    ABOUT: "/about",
+    ADMIN: "/admin"
 };

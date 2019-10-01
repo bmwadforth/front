@@ -2,6 +2,8 @@
 
 .home {
     height: calc(100vh - #{$navigation-height});
+    background-color: $danger;
+    border-top: 2px solid $light;
 
     .background {
         position: absolute;

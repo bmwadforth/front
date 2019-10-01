@@ -10,7 +10,7 @@ export default function Field(props){
 }
 
 Field.propTypes = {
-    type: PropTypes.oneOf(["text", "number"]).isRequired,
+    type: PropTypes.oneOf(["text", "number", "password"]).isRequired,
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.any
