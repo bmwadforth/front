@@ -9,7 +9,6 @@
         left: 0;
         height: calc(100vh - #{$navigation-height});
         width: 100%;
-        border-top: 2px solid $light;
         background-color: $danger;
 
         .banner-background {

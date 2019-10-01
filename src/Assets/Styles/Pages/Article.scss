@@ -1,0 +1,44 @@
+@import "../Variables";
+
+.article {
+    margin-bottom: 1em;
+    .article-title {
+        padding: 1em;
+        background-color: $dark;
+        border-radius: $border-radius $border-radius 0 0;
+        color: $light;
+
+        h1 {
+            font-size: 32px;
+        }
+
+        .article-tags {
+            margin: 0.5em 0;
+
+            .article-tag {
+                display: inline-block;
+                background-color: $danger;
+                color: $dark;
+                padding: 0.25em;
+                margin-right: 0.5em;
+                border-radius: $border-radius;
+                transition: background-color $transition-time ease-in-out;
+
+                &:hover {
+                    background-color: $warning;
+                }
+            }
+        }
+    }
+
+    .article-content {
+        padding: 1em;
+        background-color: rgba($dark, 0.1);
+        color: $dark;
+        border: 2px solid $danger;
+        font-weight: lighter;
+        p {
+            margin: 0.5em 0;
+        }
+    }
+}

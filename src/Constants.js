@@ -1,5 +1,6 @@
 export const SERVER_ROUTES = {
-    ARTICLES: "/api/articles"
+    ARTICLES: "/api/articles",
+    ARTICLE: (id) => `/api/article/${id}`
 };
 
 export const CLIENT_ROUTES = {
@@ -9,7 +10,7 @@ export const CLIENT_ROUTES = {
         if(id){
             return `/article/${id}`
         } else {
-            return `/article:id`;
+            return `/article/:id`;
         }
     },
     PROJECTS: "/projects",

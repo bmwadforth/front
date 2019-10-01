@@ -6,8 +6,9 @@ nav.navigation {
     align-items: center;
     width: 100%;
     min-height: $navigation-height;
-    background-color: $danger;
+    background-color: $dark;
     color:  $light;
+    border-bottom: 2px solid $danger;
 
     .navigation-wrap {
         display: flex;
@@ -23,8 +24,7 @@ nav.navigation {
             li {
                 margin: 1em 2em;
                 font-size: 22px;
-                background-color: rgba($dark, 0.1);
-                border: 2px solid rgba($dark, 0);
+                border: 2px solid rgba($light, 1);
                 border-radius: $border-radius;
                 a {
                     display: block;
@@ -36,11 +36,11 @@ nav.navigation {
                 transition: border $transition-time ease-in-out;
                 &:hover {
                     cursor: pointer;
-                    border: 2px solid $warning;
+                    border: 2px solid $danger;
                 }
 
                 &.active {
-                    border: 2px solid $light;
+                    border: 2px solid $danger;
                 }
             }
         }

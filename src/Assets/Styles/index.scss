@@ -39,6 +39,7 @@ html, body {
                 width: 50%;
                 margin: $view-port-margin-top auto 0;
                 @import "Pages/Articles";
+                @import "Pages/Article";
                 @import "Pages/About";
 
                 .not-found {

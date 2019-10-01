@@ -1,4 +1,11 @@
 export const ACTION_TYPES = {
+    ARTICLE :{
+        FETCH: {
+            START: "ARTICLE_FETCH_START",
+            SUCCESS: "ARTICLE_FETCH_SUCCESS",
+            FAILED: "ARTICLE_FETCH_FAILED"
+        }
+    },
     ARTICLES :{
         FETCH: {
             START: "ARTICLES_FETCH_START",
