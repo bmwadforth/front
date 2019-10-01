@@ -11,7 +11,12 @@ import * as serviceWorker from './serviceWorker';
 import "./Assets/Styles/index.scss";
 
 const saga = createSaga();
-const store = createStore(rootReducer, applyMiddleware(saga, logger));
+let store;
+if(process.env.NODE_ENV === "production") {
+    store = createStore(rootReducer, applyMiddleware(saga));
+} else {
+    store = createStore(rootReducer, applyMiddleware(saga, logger));
+}
 saga.run(rootSaga);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
