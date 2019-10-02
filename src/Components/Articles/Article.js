@@ -10,7 +10,7 @@ export default function Article(props){
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({type: ACTION_TYPES.ARTICLE.FETCH.START, payload: props.match.params.id})
-    }, []);
+    }, [dispatch, props.match.params.id]);
 
     const {data, loading, fetched, error} = useSelector(store => store.Article);
 

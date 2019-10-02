@@ -9,6 +9,11 @@ const initialAuthState = {
 
 function AuthenticationReducer(state = initialAuthState, action){
     switch(action.type){
+        case ACTION_TYPES.ADMIN.AUTHENTICATION.CHECK:
+            return {
+                ...state,
+                loading: true,
+            };
         case ACTION_TYPES.ADMIN.AUTHENTICATION.START:
             return {
                 ...state,

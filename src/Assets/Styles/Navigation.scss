@@ -25,8 +25,9 @@ nav.navigation {
                 margin: 1em 2em;
                 font-size: 22px;
                 border-radius: $border-radius;
-                border: 2px solid $warning;
-                color: $light;
+                border: 2px solid $dark;
+                background-color: $light;
+                color: $dark;
                 a {
                     display: block;
                     padding: 0.5em 2em;
@@ -38,14 +39,14 @@ nav.navigation {
                 &:hover {
                     cursor: pointer;
                     border: 2px solid $light;
-                    background-color: $light;
-                    color: $dark;
+                    background-color: $dark;
+                    color: $light;
                 }
 
                 &.active {
                     border: 2px solid $light;
-                    background-color: $light;
-                    color: $dark;
+                    background-color: $dark;
+                    color: $light;
                 }
             }
         }

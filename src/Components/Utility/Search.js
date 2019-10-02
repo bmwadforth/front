@@ -1,14 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import Field from "./Form/Field";
-import WebForm from "./Form/WebForm";
 
 export default function Search(props){
     const [query, setQuery] = useState("");
-
-    useEffect(() => {
-        //Do something maybe lol
-    }, [query]);
 
     return (
         <div className="search-bar">

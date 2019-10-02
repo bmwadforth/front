@@ -1,5 +1,4 @@
 import React from "react";
-import {ReactComponent as BannerBackground} from "../Assets/Vectors/flame-design-science.svg";
 
 export default function Home(props) {
     return (

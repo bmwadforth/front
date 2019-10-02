@@ -1,15 +1,21 @@
-import React from "react";
-import {useSelector} from "react-redux";
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import Login from "./Login";
+import {ACTION_TYPES} from "../../Actions/Types";
+import Alert from "../Utility/Alert";
 
 export default function Admin(props) {
-    //Select from redux state, whether the user is logged in
-    //if logged in, return admin panel, else return login form
-    const {authenticated} = useSelector(store => store.Admin.Authentication);
+    const {authenticated, loading} = useSelector(store => store.Admin.Authentication);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch({type: ACTION_TYPES.ADMIN.AUTHENTICATION.CHECK});
+    }, [dispatch]);
 
     return (
         <>
-            {authenticated ?
+            {loading && <Alert title="Loading" status="warning"/>}
+            {(authenticated) ?
                 <div className="admin">
                     <h1>The Control Centre</h1>
 

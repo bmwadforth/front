@@ -4,13 +4,13 @@ import {ACTION_TYPES} from "../../Actions/Types";
 import Alert from "../Utility/Alert";
 import ArticleItem from "./ArticleItem";
 
-export default function ArticleList(props) {
+export default function ArticleList() {
     const dispatch = useDispatch();
     const {loading, fetched, data, error} = useSelector(state => state.Articles);
 
     useEffect(() => {
         dispatch({type: ACTION_TYPES.ARTICLES.FETCH.START});
-    }, []);
+    }, [dispatch]);
 
     return (
         <>

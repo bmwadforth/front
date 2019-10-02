@@ -1,6 +1,7 @@
 export const SERVER_ROUTES = {
     ARTICLES: "/api/articles",
-    ARTICLE: (id) => `/api/article/${id}`
+    ARTICLE: (id) => `/api/article/${id}`,
+    ADMIN_LOGIN: "/api/login"
 };
 
 export const CLIENT_ROUTES = {

@@ -11,11 +11,16 @@ export const ACTION_TYPES = {
             START: "ARTICLES_FETCH_START",
             SUCCESS: "ARTICLES_FETCH_SUCCESS",
             FAILED: "ARTICLES_FETCH_FAILED"
+        },
+        SEARCH: {
+            START: "ARTICLES_SEARCH_START",
+            FINISH: "ARTICLES_SEARCH_FINISH"
         }
     },
     ADMIN: {
         AUTHENTICATION: {
             START: "ADMIN_AUTH_START",
+            CHECK: "ADMIN_AUTH_CHECK",
             SUCCESS: "ADMIN_AUTH_SUCCESS",
             FAILED: "ADMIN_AUTH_FAILED"
         },
