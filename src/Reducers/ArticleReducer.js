@@ -31,6 +31,7 @@ export default function ArticleReducer(state = initialState, action){
             return {
                 ...state,
                 loading: false,
+                fetched: false,
                 error: action.payload
             };
         default:

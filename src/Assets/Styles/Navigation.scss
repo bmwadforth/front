@@ -8,7 +8,7 @@ nav.navigation {
     min-height: $navigation-height;
     background-color: $dark;
     color:  $light;
-    border-bottom: 2px solid $danger;
+    border-bottom: 3px solid $warning;
 
     .navigation-wrap {
         display: flex;
@@ -24,8 +24,9 @@ nav.navigation {
             li {
                 margin: 1em 2em;
                 font-size: 22px;
-                border: 2px solid rgba($light, 1);
                 border-radius: $border-radius;
+                border: 2px solid $warning;
+                color: $light;
                 a {
                     display: block;
                     padding: 0.5em 2em;
@@ -33,17 +34,20 @@ nav.navigation {
                     width: 100%;
                 }
 
-                transition: border $transition-time ease-in-out;
+                transition: border $transition-time ease-in-out, background-color $transition-time ease-in-out, color $transition-time ease-in-out;
                 &:hover {
                     cursor: pointer;
-                    border: 2px solid $danger;
+                    border: 2px solid $light;
+                    background-color: $light;
+                    color: $dark;
                 }
 
                 &.active {
-                    border: 2px solid $danger;
+                    border: 2px solid $light;
+                    background-color: $light;
+                    color: $dark;
                 }
             }
         }
     }
-
 }

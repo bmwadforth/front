@@ -14,7 +14,7 @@ export default function ArticleList(props) {
 
     return (
         <>
-            {loading && <h1>Loading</h1>}
+            {loading && <Alert title="Loading" status="warning"/>}
             {error && <Alert title={error} status="danger"/>}
             {(!data.length && fetched) && <Alert title="No Articles" status="warning"/>}
             <div className="article-list">

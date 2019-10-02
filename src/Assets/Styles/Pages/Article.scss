@@ -1,9 +1,9 @@
 @import "../Variables";
 
 .article {
-    margin-bottom: 1em;
+    margin-bottom: 100px;
     .article-title {
-        padding: 1em;
+        padding: 2em;
         background-color: $dark;
         border-radius: $border-radius $border-radius 0 0;
         color: $light;
@@ -17,25 +17,25 @@
 
             .article-tag {
                 display: inline-block;
-                background-color: $danger;
+                background-color: $warning;
                 color: $dark;
                 padding: 0.25em;
                 margin-right: 0.5em;
                 border-radius: $border-radius;
-                transition: background-color $transition-time ease-in-out;
+                transition: background-color $transition-time ease-in-out, color $transition-time ease-in-out;
 
                 &:hover {
-                    background-color: $warning;
+                    background-color: $light;
+                    color: $dark;
                 }
             }
         }
     }
 
     .article-content {
-        padding: 1em;
+        padding: 2em;
         background-color: rgba($dark, 0.1);
         color: $dark;
-        border: 2px solid $danger;
         font-weight: lighter;
         p {
             margin: 0.5em 0;
