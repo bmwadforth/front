@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap');
+
+@import "navigation";
+@import "dashboard";
+
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  main {
+    min-height: 250px;
+  }
+
+  aside {
+    min-height: 250px;
+    margin-left: 2em;
+  }
+}
+
+#root, body {
+  margin: 0;
+  height: 100vh;
+}

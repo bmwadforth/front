@@ -1,0 +1,17 @@
+.navigation-container {
+  min-width: 250px;
+  .navigation-group {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .navigation-item {
+
+      a {
+        color: yellowgreen;
+
+      }
+
+    }
+  }
+}
