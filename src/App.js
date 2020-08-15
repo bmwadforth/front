@@ -6,7 +6,8 @@ import Articles from "./components/articles";
 
 export const ROUTES = {
   HOME: '/',
-  ARTICLES: '/articles'
+  ARTICLES: '/articles',
+  PROJECTS: '/projects'
 }
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <main>
             <Route exact path={ROUTES.HOME} component={Dashboard}/>
             <Route exat path={ROUTES.ARTICLES} component={Articles}/>
+            <Route exat path={ROUTES.PROJECTS} component={Articles}/>
           </main>
         </Switch>
         <Navigation />

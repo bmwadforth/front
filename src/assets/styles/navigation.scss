@@ -22,6 +22,15 @@
         margin-left: 0.2em;
       }
 
+      &.item-active {
+        a {
+          color: black;
+        }
+      }
+
     }
+  }
+  .navigation-social {
+
   }
 }
