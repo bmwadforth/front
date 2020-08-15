@@ -6,10 +6,20 @@
     list-style: none;
 
     .navigation-item {
+      font-size: 1.5em;
 
       a {
         color: yellowgreen;
+        text-decoration: none;
 
+        transition: color 0.3s ease;
+        &:hover {
+          color: black;
+        }
+      }
+
+      span {
+        margin-left: 0.2em;
       }
 
     }

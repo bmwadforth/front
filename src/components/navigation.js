@@ -14,7 +14,7 @@ export default function Navigation() {
     return (
         <aside className='navigation-container'>
             <ol className='navigation-group'>
-                <NavigationItem title={<>Bmwadforth<b>dot</b>com</>} link={ROUTES.HOME} />
+                <NavigationItem title={<>Bmwadforth<b>dot</b>com<span>🇦🇺</span></>} link={ROUTES.HOME} />
                 <NavigationItem title={'Articles'} link={ROUTES.ARTICLES} />
             </ol>
         </aside>
