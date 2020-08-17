@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import ArticleApi from "../thunks/articleThunk";
 
 const initialState = {
@@ -34,7 +34,7 @@ export const articleSlice = createSlice({
  * @returns {function(...[*]=)}
  */
 export const fetchArticles = () => async dispatch => {
-    const { startFetchArticles, successFetchArticles, failFetchArticles } = articleSlice.actions;
+    const {startFetchArticles, successFetchArticles, failFetchArticles} = articleSlice.actions;
     
     dispatch(startFetchArticles());
     try {

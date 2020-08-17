@@ -1,0 +1,33 @@
+.icon {
+  svg {
+    height: 28px;
+    width: 28px;
+  }
+
+  &.icon-medium {
+    font-size: 1.25em;
+  }
+
+  &.icon-large {
+    font-size: 1.5em;
+  }
+
+  &.icon-link {
+    svg {
+      path {
+        transition: fill 0.3s ease;
+      }
+    }
+
+    a {
+      &:hover {
+        svg {
+          path {
+            cursor: pointer;
+            fill: yellowgreen !important;
+          }
+        }
+      }
+    }
+  }
+}

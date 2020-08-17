@@ -6,7 +6,12 @@ export default class ArticleApi {
         try {
             //const res = await axios.get(URL);
             const res = {
-                data: [{id: 1, title: 'My Article', description: 'This is a really cool article awesome lol', created: Date.now()}]
+                data: [{
+                    id: 1,
+                    title: 'My Article',
+                    description: 'This is a really cool article awesome lol',
+                    created: Date.now()
+                }]
             }
             
             return res.data;

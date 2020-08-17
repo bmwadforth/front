@@ -13,10 +13,22 @@ main {
 
   .title {
     font-weight: normal;
+    text-align: center;
   }
 
   .credentials {
+    text-align: center;
     font-size: 0.90em;
     color: gray;
+    margin-bottom: 1em;
+  }
+
+  .social-icons {
+    display: flex;
+
+    .icon {
+      flex: 1;
+      text-align: center;
+    }
   }
 }
