@@ -6,7 +6,7 @@ export default function Dashboard() {
         <div className="dashboard">
             <h1 className="title">Brannon Wadforth</h1>
             <p className="credentials">Australian <span aria-label="Australia" role="img">🇦🇺</span>. Professional
-                software consultant. Information security connoisseur. Aspiring cyber security professional. I will hack you if you ask me to.</p>
+                software consultant. Information security connoisseur. Aspiring ethical hacker. I will hack you if you ask me to, and if it is ethical (and if you pay me lol).</p>
             <span className="social-icons">
                 <Icon icon={ICONS.TWITTER} link="https://twitter.com/bmwadforth" size="small"/>
                 <Icon icon={ICONS.INSTAGRAM} link="https://instagram.com/bmwadforth" size="small"/>

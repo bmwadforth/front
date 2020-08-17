@@ -29,6 +29,12 @@ main {
     .icon {
       flex: 1;
       text-align: center;
+
+      svg {
+        path {
+          fill: white !important;
+        }
+      }
     }
   }
 }
