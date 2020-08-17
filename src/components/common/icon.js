@@ -2,11 +2,13 @@ import React from 'react';
 import {ReactComponent as Instagram} from '../../assets/icons/instagram.svg'
 import {ReactComponent as Twitter} from '../../assets/icons/twitter.svg'
 import {ReactComponent as Github} from '../../assets/icons/github.svg'
+import {ReactComponent as Linkedin} from '../../assets/icons/linkedin.svg'
 
 export const ICONS = {
     INSTAGRAM: <Instagram/>,
     TWITTER: <Twitter/>,
-    GITHUB: <Github/>
+    GITHUB: <Github/>,
+    LINKEDIN: <Linkedin/>,
 }
 
 export default function Icon({icon, size, link}) {
