@@ -43,3 +43,27 @@ html {
   background-repeat: no-repeat;
   color: white;
 }
+
+@media only screen and (max-width: 800px) {
+  html {
+    .dashboard {
+      background-color: white;
+      border-radius: 4px;
+      color: black;
+      padding: 1em;
+
+      .social-icons {
+        .icon {
+          flex: 1;
+          text-align: center;
+
+          svg {
+            path {
+              fill: black !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
