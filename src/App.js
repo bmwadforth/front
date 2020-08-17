@@ -17,11 +17,12 @@ function App() {
         <Switch>
           <main>
             <Route exact path={ROUTES.HOME} component={Dashboard}/>
-            <Route exat path={ROUTES.ARTICLES} component={Articles}/>
-            <Route exat path={ROUTES.PROJECTS} component={Articles}/>
+            {/*
+            <Route exact path={ROUTES.ARTICLES} component={Articles}/>
+            <Route exact path={ROUTES.PROJECTS} component={Articles}/>*/}
           </main>
         </Switch>
-        <Navigation />
+        {/*<Navigation />*/}
       </Router>
     </div>
   );
