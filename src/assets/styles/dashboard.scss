@@ -18,14 +18,40 @@ main {
 
   .credentials {
     text-align: center;
-    font-size: 0.90em;
+    font-size: 0.85em;
     color: gray;
     margin-bottom: 1em;
   }
 
+  .links {
+    border-top: 1px dashed limegreen;
+    border-bottom: 1px dashed limegreen;
+    padding: 1em;
+    margin: 1em 0 1.5em 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .link-item {
+      flex: 1;
+      text-align: center;
+      font-size: 1.25em;
+      font-weight: bold;
+
+      a {
+        color: limegreen;
+
+        transition: color 0.3s ease;
+        &:hover {
+          color: orangered;
+        }
+      }
+    }
+  }
+
   .social-icons {
     display: flex;
-
     .icon {
       flex: 1;
       text-align: center;
