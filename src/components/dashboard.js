@@ -13,8 +13,8 @@ export default function Dashboard() {
           <span aria-label="Australia" role="img">
             🇦🇺
           </span>
-          . Professional software consultant. Information security connoisseur. Aspiring ethical hacker. I will hack you
-          if you ask me to, and if it is ethical.
+          | Professional software consultant | Aspiring ethical hacker
+          <span role="img">&nbsp; 💻</span>
         </p>
         <div className="links">
           <span className="link-item">

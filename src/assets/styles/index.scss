@@ -38,6 +38,12 @@ body {
   color: white;
 }
 
+.not-found-meta {
+  sub {
+    color: red;
+  }
+}
+
 .dashboard-container {
   height: 100%;
   display: flex;

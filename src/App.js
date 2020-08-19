@@ -31,12 +31,12 @@ function NotFound({}) {
         status="warning"
         title="404 Not Found"
         description={
-          <div>
+          <div className="not-found-meta">
             <p>{`Path ${location.pathname} was not found.`}</p>
             <br />
             <sub>
               <p>
-                Connection from {data.colo}, {data.loc}
+                Connection from: {data.colo}, {data.loc}
               </p>
               <p>User agent: {data.uag}</p>
               <p>Internet Protocol Address: {data.ip}</p>
