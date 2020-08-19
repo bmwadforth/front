@@ -9,21 +9,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-.App {
+.App,
+main {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  main {
-    min-width: 300px;
-    min-height: 250px;
-  }
-
-  aside {
-    min-height: 250px;
-    margin-left: 2em;
-  }
 }
 
 #root,
@@ -36,13 +24,6 @@ body {
   height: 0.5px;
   border: 0.5px solid gray;
   width: 100%;
-}
-
-html {
-  background-image: url('unnamed.gif');
-  background-color: black;
-  background-repeat: no-repeat;
-  color: white;
 }
 
 @media only screen and (max-width: 800px) {
