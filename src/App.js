@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/navigation';
 import Dashboard from './components/dashboard';
 import Articles from './components/articles';
@@ -19,14 +19,11 @@ function Alert({ status, title, description }) {
   );
 }
 
-function NotFound() {
+function NotFound({}) {
+  const location = useLocation();
   return (
     <div className="not-found">
-      <Alert
-        status="warning"
-        title="Not Found"
-        description="The page you accessed does not exist yet or never, ever existed."
-      />
+      <Alert status="warning" title="404 Not Found" description={`Path ${location.pathname} was not found.`} />
     </div>
   );
 }
