@@ -68,9 +68,28 @@ main {
       flex: 1;
       text-align: center;
 
+      &.icon-link {
+        svg {
+          path {
+            transition: fill 0.3s ease;
+          }
+        }
+
+        a {
+          &:hover {
+            svg {
+              path {
+                cursor: pointer;
+                fill: red !important;
+              }
+            }
+          }
+        }
+      }
+
       svg {
         path {
-          fill: white !important;
+          fill: limegreen !important;
         }
       }
     }

@@ -1,0 +1,21 @@
+.alert {
+  width: 100%;
+  min-height: 75px;
+  padding: 1em;
+
+  &.alert-info {
+  }
+
+  &.alert-warning {
+    background-color: rgba(limegreen, 0.8);
+    color: black;
+  }
+
+  h1 {
+    margin: 0.125em 0 0.5em 0;
+    font-size: 1.25em;
+  }
+
+  p {
+  }
+}

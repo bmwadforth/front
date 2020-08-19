@@ -11,23 +11,4 @@
   &.icon-large {
     font-size: 1.5em;
   }
-
-  &.icon-link {
-    svg {
-      path {
-        transition: fill 0.3s ease;
-      }
-    }
-
-    a {
-      &:hover {
-        svg {
-          path {
-            cursor: pointer;
-            fill: limegreen !important;
-          }
-        }
-      }
-    }
-  }
 }

@@ -3,6 +3,7 @@
 @import 'navigation';
 @import 'dashboard';
 @import 'icon';
+@import 'alert';
 
 * {
   box-sizing: border-box;
@@ -26,13 +27,38 @@ body {
   width: 100%;
 }
 
+.not-found {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('unnamed.gif');
+  background-color: black;
+  background-repeat: no-repeat;
+  color: white;
+}
+
 @media only screen and (max-width: 800px) {
   html {
     .dashboard {
-      background-color: white;
+      background-color: rgba(limegreen, 0.8);
       border-radius: 4px;
       color: black;
       padding: 1em;
+
+      .credentials {
+        color: black;
+      }
+
+      .links {
+        border-top: 1px dashed black;
+        border-bottom: 1px dashed black;
+        .link-item {
+          a {
+            color: black;
+          }
+        }
+      }
 
       .social-icons {
         .icon {
