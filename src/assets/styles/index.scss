@@ -62,35 +62,13 @@ body {
     }
 
     .dashboard {
-      background-color: rgba(limegreen, 1);
       border-radius: 4px;
-      color: black;
       padding: 1em;
-
-      .credentials {
-        color: black;
-      }
-
-      .links {
-        border-top: 1px dashed black;
-        border-bottom: 1px dashed black;
-        .link-item {
-          a {
-            color: black;
-          }
-        }
-      }
 
       .social-icons {
         .icon {
           flex: 1;
           text-align: center;
-
-          svg {
-            path {
-              fill: black !important;
-            }
-          }
         }
       }
     }
