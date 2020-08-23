@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import articleReducer from '../slices/articleSlice';
+import articleSummaryReducer from '../slices/articleSummarySlice';
 import metaReducer from '../slices/metaSlice';
 
 export default configureStore({
   reducer: {
-    articles: articleReducer,
+    articleSummary: articleSummaryReducer,
     meta: metaReducer,
   },
 });

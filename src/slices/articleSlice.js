@@ -3,17 +3,28 @@ import ArticleApi from '../thunks/articleThunk';
 
 const initialState = {
   loading: 'idle',
-  data: [],
+  data: {
+    id: '',
+    title: '',
+    description: '',
+    content: '',
+    image: '',
+    likes: 0,
+    tags: [],
+    comments: [],
+    createdAt: '',
+    updatedAt: '',
+  },
   error: null,
 };
 
 export const articleSlice = createSlice({
-  name: 'articles',
+  name: 'article',
   initialState,
   reducers: {
     startFetchArticles(state) {
       state.loading = 'pending';
-      state.data = [];
+      state.data = initialState.data;
       state.error = null;
     },
     successFetchArticles(state, action) {
@@ -23,17 +34,18 @@ export const articleSlice = createSlice({
     },
     failFetchArticles(state, action) {
       state.loading = 'idle';
-      state.data = [];
+      state.data = initialState.data;
       state.error = action.payload;
     },
   },
 });
 
 /**
- * Used to fetch redirect URLs for oauth2 providers
+ * Fetches an article by ID
+ * @param id
  * @returns {function(...[*]=)}
  */
-export const fetchArticles = () => async (dispatch) => {
+export const fetchArticle = (id) => async (dispatch) => {
   const { startFetchArticles, successFetchArticles, failFetchArticles } = articleSlice.actions;
 
   dispatch(startFetchArticles());
@@ -46,6 +58,6 @@ export const fetchArticles = () => async (dispatch) => {
   }
 };
 
-export const selectArticles = (state) => state.articles.data;
+export const articleArticle = (state) => state.article.data;
 
 export default articleSlice.reducer;

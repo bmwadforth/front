@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchArticles, selectArticles } from '../slices/articleSlice';
+import { fetchArticles, selectArticles } from '../slices/articleSummarySlice';
 
 export default function Articles() {
   const dispatch = useDispatch();
