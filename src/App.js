@@ -28,7 +28,7 @@ function NotFound({}) {
   return (
     <div className="not-found">
       <Alert
-        status="warning"
+        status="transparent"
         title="404 Not Found"
         description={
           <div className="not-found-meta">
@@ -60,7 +60,7 @@ function App() {
         <main>
           <Switch>
             <Route exact path={ROUTES.HOME} component={Dashboard} />
-            <Route exact path={ROUTES.ARTICLES} component={Articles} />
+            {/*<Route exact path={ROUTES.ARTICLES} component={Articles} />*/}
             <Route exact component={NotFound} />
           </Switch>
         </main>

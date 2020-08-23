@@ -4,6 +4,8 @@
 @import 'dashboard';
 @import 'icon';
 @import 'alert';
+@import 'articles';
+@import 'variables';
 
 * {
   box-sizing: border-box;
@@ -26,51 +28,22 @@ body {
   border: 0.5px solid gray;
   width: 100%;
 }
-
 .not-found {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('unnamed.gif');
-  background-color: black;
-  background-repeat: no-repeat;
-  color: white;
-}
+  background: url('../vectors/cyborg-page-not-found.svg') no-repeat right;
+  z-index: 500;
 
-.not-found-meta {
-  sub {
-    color: red;
+  @media only screen and (max-width: 800px) {
+    background: url('../vectors/cyborg-page-not-found.svg') no-repeat bottom;
+    background-size: contain;
   }
-}
 
-.dashboard-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('unnamed.gif');
-  background-color: black;
-  background-repeat: no-repeat;
-  color: white;
-}
-
-@media only screen and (max-width: 800px) {
-  html {
-    .dashboard-container {
-      background-image: none;
+  .not-found-meta {
+    p {
+      margin-bottom: 0.5em;
     }
-
-    .dashboard {
-      border-radius: 4px;
-      padding: 1em;
-
-      .social-icons {
-        .icon {
-          flex: 1;
-          text-align: center;
-        }
-      }
+    sub {
+      color: $color-primary;
     }
   }
 }

@@ -1,0 +1,38 @@
+.articles-container {
+  width: 80%;
+  margin: 0 auto;
+
+  .articles-title {
+    margin: 0.5em 0;
+    background: rgba(gray, 0.1) url('../vectors/cyborg-message-sent.svg') no-repeat right;
+    background-size: inherit;
+    height: 150px;
+    border-radius: 4px;
+
+    .articles-title-content {
+      padding: 0.85em;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+
+    .article-item {
+      min-height: 200px;
+      padding: 1em;
+      background-color: rgba(gray, 0.1);
+
+      transition: background-color 0.3s ease;
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(gray, 0.3);
+      }
+    }
+  }
+}

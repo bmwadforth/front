@@ -40,8 +40,7 @@ export default function Navigation() {
           onClick={() => setActive(ROUTES.PROJECTS)}
         />
       </ol>
-      <hr />
-      <span className="navigation-social"></span>
+      <hr className="divider" />
     </aside>
   );
 }

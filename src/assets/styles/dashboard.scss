@@ -1,84 +1,88 @@
-main {
-  h1 {
-    margin: 0;
-  }
+@import 'variables';
 
-  p {
-    margin: 0;
-  }
-}
-
-.dashboard {
-  width: 400px;
-  margin-bottom: 200px;
+.dashboard-container {
+  height: 100%;
+  width: 40%;
+  margin: 0 auto;
+  background-image: url('../vectors/cyborg-unsubscribed.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
 
   .title {
-    font-weight: normal;
-    text-align: center;
+    margin: 0;
   }
 
-  .credentials {
-    text-align: center;
-    font-size: 0.85em;
-    color: gray;
-    margin-bottom: 1em;
-  }
+  .dashboard {
+    height: 100%;
 
-  .links {
-    border-top: 1px dashed limegreen;
-    border-bottom: 1px dashed limegreen;
-    padding: 1em;
-    margin: 1em 0 1.5em 0;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-
-    .link-item {
-      flex: 1;
+    .title {
       text-align: center;
-      font-size: 1.25em;
-      font-weight: bold;
+    }
 
-      a {
-        color: limegreen;
+    .credentials {
+      text-align: center;
+      background-color: rgba($color-secondary, 1);
+      margin: 0;
+    }
 
-        transition: color 0.3s ease;
-        &:hover {
-          color: orangered;
+    .links {
+      display: flex;
+      background-color: rgba($color-secondary, 1);
+      padding: 0.5em;
+      .link-item {
+        flex: 1;
+        text-align: center;
+        font-size: 1.5em;
+
+        a {
+          transition: color 0.3s ease;
+          color: inherit;
+          &:hover {
+            color: $color-primary;
+          }
         }
       }
     }
-  }
-
-  .social-icons {
-    display: flex;
-    .icon {
-      flex: 1;
-      text-align: center;
-
-      &.icon-link {
-        svg {
-          path {
-            transition: fill 0.3s ease;
-          }
-        }
-
-        a {
-          &:hover {
-            svg {
-              path {
-                cursor: pointer;
-                fill: red !important;
-              }
-            }
-          }
-        }
+    .social-icons {
+      display: flex;
+      width: 40%;
+      margin: 1em auto;
+      .icon {
+        flex: 1;
       }
 
       svg {
         path {
-          fill: limegreen !important;
+          transition: fill 0.3s ease;
+        }
+      }
+
+      svg {
+        &:hover {
+          path {
+            fill: $color-primary !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    .dashboard-container {
+      width: 100%;
+      background-size: contain;
+    }
+
+    .dashboard {
+      border-radius: 4px;
+      padding: 1em;
+
+      .social-icons {
+        .icon {
+          flex: 1;
+          text-align: center;
         }
       }
     }

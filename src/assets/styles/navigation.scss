@@ -1,12 +1,15 @@
 .navigation-container {
   min-width: 250px;
+  margin-top: 1em;
 
   .navigation-group {
+    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 
     .navigation-item {
+      flex: 1;
       font-size: 1.5em;
 
       a {

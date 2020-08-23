@@ -7,15 +7,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard-container">
       <div className="dashboard">
-        <h1 className="title">Brannon Wadforth</h1>
-        <p className="credentials">
-          Australian{' '}
-          <span aria-label="Australia" role="img">
-            🇦🇺
-          </span>
-          | Professional software consultant | Aspiring ethical hacker
-          <span role="img">&nbsp; 💻</span>
-        </p>
+        <p className="credentials">Brannon | Australian | Software Consultant | Aspiring Ethical Hacker</p>
         <div className="links">
           <span className="link-item">
             <Link to={ROUTES.ARTICLES}>Articles</Link>
