@@ -4,9 +4,9 @@ export default class ArticlesApi extends APIHelper {
   static async fetch() {
     try {
       //const res = await axios.get(URL);
-      const res = new APIHelper(`/articles`).get();
-
-      return res.data;
+      const api = new APIHelper(`/articles`);
+      const res = await api.get();
+      return res.data.data;
     } catch (e) {
       console.error(e);
       throw e;
