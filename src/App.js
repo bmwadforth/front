@@ -36,10 +36,14 @@ function NotFound({}) {
             <br />
             <sub>
               <p>
-                Connection from: {data.colo ? data.colo : 'N/A'}, {data.loc ? data.loc : 'N/A'}
+                <b>Connection from:</b> {data.colo ? data.colo : 'N/A'}, {data.loc ? data.loc : 'N/A'}
               </p>
-              <p>User agent: {data.uag ? data.uag : 'N/A'}</p>
-              <p>Internet Protocol Address: {data.ip ? data.ip : 'N/A'}</p>
+              <p>
+                <b>User agent:</b> {data.uag ? data.uag : 'N/A'}
+              </p>
+              <p>
+                <b>Internet Protocol Address:</b> {data.ip ? data.ip : 'N/A'}
+              </p>
             </sub>
           </div>
         }
