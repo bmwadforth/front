@@ -35,8 +35,8 @@ body {
   z-index: 500;
 
   @media only screen and (max-width: 800px) {
-    background: url('../vectors/cyborg-page-not-found.svg') no-repeat bottom;
     background-size: contain;
+    background-position: center;
   }
 
   .alert {

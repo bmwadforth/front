@@ -7,6 +7,10 @@
   background-position: bottom;
   background-repeat: no-repeat;
 
+  @media only screen and (max-width: 800px) {
+    background-position: center;
+  }
+
   .title {
     margin: 0;
   }
