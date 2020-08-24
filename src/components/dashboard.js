@@ -14,7 +14,11 @@ export default function Dashboard() {
           {step === 1 && <h1 onClick={() => setStep(2)}>Again.</h1>}
           {step === 2 && <h1 onClick={() => setStep(3)}>One more time.</h1>}
           {step === 3 && <h1 onClick={() => setStep(4)}>Ok no more.</h1>}
-          {step === 4 && <h1 onClick={() => setStep(5)}>Don't.</h1>}
+          {step === 4 && (
+            <h1 style={{ color: 'white' }} onClick={() => setStep(5)}>
+              Don't.
+            </h1>
+          )}
           {step === 5 && <h1 onClick={() => setStep(6)}>Stop.</h1>}
           {step === 6 &&
             window.location.replace('https://www.cyber.gov.au/acsc/view-all-content/programs/stay-smart-online')}

@@ -5,7 +5,7 @@
   margin: 0 auto;
   background-image: url('../vectors/cyborg-unsubscribed.svg');
   background-position: bottom;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 
   @media only screen and (max-width: 800px) {
     background-position: center;
@@ -16,8 +16,7 @@
   }
 
   .dashboard {
-    height: 100%;
-    display: flex;
+    display: block;
     justify-content: center;
     text-align: center;
 

@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchArticles, selectArticles } from '../slices/articleSummarySlice';
 import moment from 'moment';
-import Navigation from './navigation';
+import NavigationLine from './common/navigationLine';
+import { Alert } from '../App';
+import { ICONS } from './common/icon';
 
 function ArticleItem({ article }) {
   return (
@@ -19,7 +21,8 @@ function ArticleItem({ article }) {
 
 export default function Articles() {
   const dispatch = useDispatch();
-  const data = useSelector(selectArticles);
+  //const data = useSelector(selectArticles);
+  const data = [];
 
   useEffect(() => {
     dispatch(fetchArticles());
@@ -27,17 +30,23 @@ export default function Articles() {
 
   return (
     <div className="articles-container">
-      <Navigation />
-      <div className="articles-title">
-        <div className="articles-title-content">
-          <h1>A collection of stuff</h1>
-          <p>Read my nonsense. Please.</p>
-        </div>
-      </div>
+      <NavigationLine />
       <div className="articles">
-        {data.map((article) => {
-          return <ArticleItem key={article.id} article={article} />;
-        })}
+        <div className="articles-title">
+          <div className="articles-title-content">
+            <h1>Articles</h1>
+            <p>Scientia ipsa potentia est.</p>
+          </div>
+        </div>
+        {data.length === 0 ? (
+          <Alert title="No Articles" description="Check back later" status="warning" icon={ICONS.WARNING} />
+        ) : (
+          <div className="article-list">
+            {data.map((article) => {
+              return <ArticleItem key={article.id} article={article} />;
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

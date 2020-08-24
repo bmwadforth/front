@@ -1,37 +1,59 @@
+@import 'variables';
+
 .articles-container {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 
-  .articles-title {
-    margin: 0.5em 0;
-    background: rgba(gray, 0.1) url('../vectors/cyborg-message-sent.svg') no-repeat right;
-    background-size: inherit;
-    height: 150px;
-    border-radius: 4px;
+  .navigation {
+    justify-content: left;
+    padding: 0 10%;
 
-    .articles-title-content {
-      padding: 0.85em;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .navigation-item {
+      margin-left: 0;
     }
   }
 
   .articles {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
+    width: 80%;
+    margin: 0 auto;
+    .articles-title {
+      margin-bottom: 0.5em;
+      background: $color-default url('../vectors/cyborg-message-sent.svg') no-repeat right;
+      background-size: inherit;
+      height: 200px;
+      border-radius: 0 0 4px 4px;
 
-    .article-item {
-      min-height: 200px;
-      padding: 1em;
-      background-color: rgba(gray, 0.1);
+      .articles-title-content {
+        padding: 0.85em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-      transition: background-color 0.3s ease;
-      &:hover {
-        cursor: pointer;
-        background-color: rgba(gray, 0.3);
+        h1 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .article-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px;
+
+      .article-item {
+        min-height: 200px;
+        padding: 1em;
+        background-color: rgba(gray, 0.1);
+
+        transition: background-color 0.3s ease;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba(gray, 0.3);
+        }
       }
     }
   }

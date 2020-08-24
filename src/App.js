@@ -6,6 +6,7 @@ import { fetchMeta, selectMeta } from './slices/metaSlice';
 import Icon, { ICONS } from './components/common/icon';
 import SocialLine from './components/common/social';
 import MetaLine from './components/common/metaLine';
+import Articles from './components/articles';
 
 export const ROUTES = {
   HOME: '/',
@@ -13,7 +14,7 @@ export const ROUTES = {
   PROJECTS: '/projects',
 };
 
-function Alert({ status, title, description, icon, onIconClick }) {
+export function Alert({ status, title, description, icon, onIconClick }) {
   return (
     <div className={`alert ${status ? `alert-${status}` : `alert-info`}`}>
       {icon ? (
@@ -61,7 +62,7 @@ function App() {
         <main>
           <Switch>
             <Route exact path={ROUTES.HOME} component={Dashboard} />
-            {/*<Route exact path={ROUTES.ARTICLES} component={Articles} />*/}
+            <Route exact path={ROUTES.ARTICLES} component={Articles} />
             <Route exact component={NotFound} />
           </Switch>
         </main>
