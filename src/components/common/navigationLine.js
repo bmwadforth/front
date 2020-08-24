@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ROUTES } from '../App';
+import { ROUTES } from '../../App';
 
 function NavigationItem({ active, title, link, onClick }) {
   return (
@@ -10,37 +10,36 @@ function NavigationItem({ active, title, link, onClick }) {
   );
 }
 
-export default function Navigation() {
+export default function NavigationLine() {
   const location = useLocation();
   const [active, setActive] = useState(location.pathname);
 
   return (
-    <aside className="navigation-container">
-      <ol className="navigation-group">
+    <nav className="navigation-container">
+      <div className="navigation">
         <NavigationItem
-          active={active === ROUTES.HOME}
           title={
             <>
-              Bmwadforth<b>dot</b>com<span>🇦🇺</span>
+              Bmwadforth<b>dot</b>com
             </>
           }
           link={ROUTES.HOME}
+          active={active === ROUTES.HOME}
           onClick={() => setActive(ROUTES.HOME)}
         />
         <NavigationItem
-          active={active === ROUTES.ARTICLES}
-          title={'Articles'}
+          title="Articles"
           link={ROUTES.ARTICLES}
+          active={active === ROUTES.ARTICLES}
           onClick={() => setActive(ROUTES.ARTICLES)}
         />
         <NavigationItem
-          active={active === ROUTES.PROJECTS}
-          title={'Projects'}
+          title="Projects"
           link={ROUTES.PROJECTS}
+          active={active === ROUTES.PROJECTS}
           onClick={() => setActive(ROUTES.PROJECTS)}
         />
-      </ol>
-      <hr className="divider" />
-    </aside>
+      </div>
+    </nav>
   );
 }

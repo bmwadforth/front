@@ -30,7 +30,8 @@ body {
 }
 .not-found {
   height: 100%;
-  background: url('../vectors/cyborg-page-not-found.svg') no-repeat right;
+  background: url('../vectors/cyborg-page-not-found.svg') no-repeat center bottom;
+  background-size: auto;
   z-index: 500;
 
   @media only screen and (max-width: 800px) {
@@ -38,12 +39,39 @@ body {
     background-size: contain;
   }
 
+  .alert {
+    background-color: $color-default;
+  }
+
+  h1 {
+    margin-bottom: 0.5em;
+  }
+
   .not-found-meta {
     p {
-      margin-bottom: 0.5em;
+      margin: 0 0 0.5em 0;
     }
     sub {
       color: $color-primary;
+    }
+  }
+}
+
+.social-line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-default;
+  height: 40px;
+  .social-icons {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      margin: 0 1em;
     }
   }
 }

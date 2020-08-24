@@ -11,8 +11,19 @@
     color: black;
   }
 
+  .title-icon {
+    display: flex;
+    align-items: center;
+    .icon {
+      margin-right: 1em;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
   h1 {
-    margin: 0.125em 0 0.5em 0;
     font-size: 1.25em;
   }
 

@@ -2,7 +2,6 @@
 
 .dashboard-container {
   height: 100%;
-  width: 40%;
   margin: 0 auto;
   background-image: url('../vectors/cyborg-unsubscribed.svg');
   background-position: bottom;
@@ -14,54 +13,17 @@
 
   .dashboard {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 
-    .title {
-      text-align: center;
-    }
-
-    .credentials {
-      text-align: center;
-      background-color: rgba($color-secondary, 1);
-      margin: 0;
-    }
-
-    .links {
-      display: flex;
-      background-color: rgba($color-secondary, 1);
-      padding: 0.5em;
-      .link-item {
-        flex: 1;
-        text-align: center;
-        font-size: 1.5em;
-
-        a {
-          transition: color 0.3s ease;
-          color: inherit;
-          &:hover {
-            color: $color-primary;
-          }
-        }
-      }
-    }
-    .social-icons {
-      display: flex;
-      width: 40%;
-      margin: 1em auto;
-      .icon {
-        flex: 1;
-      }
-
-      svg {
-        path {
-          transition: fill 0.3s ease;
-        }
-      }
-
-      svg {
+    .oh-no {
+      width: 100%;
+      h1 {
+        transition: color 0.3s ease;
         &:hover {
-          path {
-            fill: $color-primary !important;
-          }
+          cursor: pointer;
+          color: $color-primary;
         }
       }
     }
