@@ -62,7 +62,6 @@ function App() {
         <main>
           <Switch>
             <Route exact path={ROUTES.HOME} component={Dashboard} />
-            <Route exact path={ROUTES.ARTICLES} component={Articles} />
             <Route exact component={NotFound} />
           </Switch>
         </main>

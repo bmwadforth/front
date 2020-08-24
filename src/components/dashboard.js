@@ -9,6 +9,17 @@ export default function Dashboard() {
     <div className="dashboard-container" style={step === 4 ? { backgroundImage: `url(${background})` } : {}}>
       <NavigationLine />
       <div className="dashboard">
+        <div className="credentials-container">
+          <div className="credentials">
+            <span>
+              <sub>Brannon</sub>
+              <sub>Australian</sub>
+              <sub>Software Consultant</sub>
+              <sub>Aspiring Ethical Hacker</sub>
+            </span>
+          </div>
+        </div>
+        {/*
         <div className="oh-no">
           {step === 0 && <h1 onClick={() => setStep(1)}>Click me</h1>}
           {step === 1 && <h1 onClick={() => setStep(2)}>Again.</h1>}
@@ -18,7 +29,7 @@ export default function Dashboard() {
           {step === 5 && <h1 onClick={() => setStep(6)}>Stop.</h1>}
           {step === 6 &&
             window.location.replace('https://www.cyber.gov.au/acsc/view-all-content/programs/stay-smart-online')}
-        </div>
+        </div>*/}
       </div>
       <SocialLine />
     </div>

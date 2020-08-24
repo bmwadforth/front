@@ -9,6 +9,7 @@
 
   @media only screen and (max-width: 800px) {
     background-position: center;
+    background-size: contain;
   }
 
   .title {
@@ -20,6 +21,42 @@
     justify-content: center;
     text-align: center;
 
+    .credentials-container {
+      height: 60px;
+      background-color: rgba($color-secondary, 1);
+      @media only screen and (max-width: 800px) {
+        height: 100px;
+      }
+      .credentials {
+        height: 100%;
+        span {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @media only screen and (max-width: 800px) {
+            flex-direction: column;
+          }
+
+          sub {
+            font-weight: bold;
+            @media only screen and (max-width: 800px) {
+              &::before {
+                content: '>';
+              }
+            }
+            & + sub {
+              &::before {
+                @media only screen and (min-width: 800px) {
+                  content: ' | ';
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     .oh-no {
       width: 100%;
       h1 {
@@ -27,27 +64,6 @@
         &:hover {
           cursor: pointer;
           color: $color-primary;
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  html {
-    .dashboard-container {
-      width: 100%;
-      background-size: contain;
-    }
-
-    .dashboard {
-      border-radius: 4px;
-      padding: 1em;
-
-      .social-icons {
-        .icon {
-          flex: 1;
-          text-align: center;
         }
       }
     }
