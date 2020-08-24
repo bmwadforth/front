@@ -21,8 +21,7 @@ function ArticleItem({ article }) {
 
 export default function Articles() {
   const dispatch = useDispatch();
-  //const data = useSelector(selectArticles);
-  const data = [];
+  const data = useSelector(selectArticles);
 
   useEffect(() => {
     dispatch(fetchArticles());
