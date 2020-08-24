@@ -14,12 +14,12 @@ export const ROUTES = {
   PROJECTS: '/projects',
 };
 
-export function Alert({ status, title, description, icon, onIconClick }) {
+export function Alert({ status, title, description, icon, iconLink, onIconClick }) {
   return (
     <div className={`alert ${status ? `alert-${status}` : `alert-info`}`}>
       {icon ? (
         <span className="title-icon">
-          {icon && <Icon icon={icon} onClick={onIconClick} size="small" />}
+          {icon && <Icon icon={icon} link={iconLink} onClick={onIconClick} size="small" />}
           <h1>{title}</h1>
         </span>
       ) : (
@@ -45,7 +45,6 @@ function NotFound({}) {
           </div>
         }
       />
-      <SocialLine />
     </div>
   );
 }
@@ -62,9 +61,11 @@ function App() {
         <main>
           <Switch>
             <Route exact path={ROUTES.HOME} component={Dashboard} />
+            <Route exact path={ROUTES.ARTICLES} component={Articles} />
             <Route exact component={NotFound} />
           </Switch>
         </main>
+        <SocialLine />
         {/*<Navigation />*/}
       </Router>
     </div>

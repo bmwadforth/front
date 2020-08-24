@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import SocialLine from './common/social';
 import NavigationLine from './common/navigationLine';
 import background from '../assets/styles/unnamed.gif';
 
@@ -31,7 +30,6 @@ export default function Dashboard() {
             window.location.replace('https://www.cyber.gov.au/acsc/view-all-content/programs/stay-smart-online')}
         </div>*/}
       </div>
-      <SocialLine />
     </div>
   );
 }

@@ -12,6 +12,17 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+html {
+  background-color: $color-dark;
+  color: white;
+
+  svg {
+    path {
+      fill: white !important;
+    }
+  }
+}
+
 .App,
 main {
   height: 100%;

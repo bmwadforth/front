@@ -23,7 +23,8 @@
 
     .credentials-container {
       height: 60px;
-      background-color: rgba($color-secondary, 1);
+      background-color: $color-primary;
+      color: $color-secondary;
       @media only screen and (max-width: 800px) {
         height: 100px;
       }

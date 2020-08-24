@@ -12,6 +12,11 @@
   &.alert-warning {
     background-color: yellow;
     color: black;
+    svg {
+      path {
+        fill: black !important;
+      }
+    }
   }
 
   .title-icon {
