@@ -5,6 +5,8 @@ import { ICONS } from './common/icon';
 import { useParams } from 'react-router-dom';
 import { fetchArticle } from '../slices/articleSlice';
 import moment from 'moment';
+import Loader from './common/loader';
+import Markdown from 'react-markdown';
 
 export default function Article() {
   const { id } = useParams();
@@ -20,30 +22,41 @@ export default function Article() {
       <div className="article">
         <div className="article-title">
           <div className="article-title-content">
-            <Alert
-              title={data.title}
-              description={
-                <>
-                  <p>{data.description}</p>
-                  <div className="article-meta">
-                    <p>{data.likes} likes</p>
-                    <p>{data.comments.length} comments</p>
-                    <p>Written {moment(data.createdAt).format('DD/MM/YYYY')}</p>
-                  </div>
-                </>
-              }
-              status="transparent"
-              icon={ICONS.BACK}
-              iconLink={ROUTES.ARTICLES}
-            />
+            {loading !== 'idle' ? (
+              <Loader dot />
+            ) : (
+              <Alert
+                title={data.title}
+                description={
+                  <>
+                    <p>{data.description}</p>
+                    <div className="article-meta">
+                      {/*
+                    <span>{data.likes} likes</span>
+                    <span>{data.comments.length} comments</span>*/}
+                      <span>Written {moment(data.createdAt).format('DD/MM/YYYY')}</span>
+                    </div>
+                  </>
+                }
+                status="transparent"
+                icon={ICONS.BACK}
+                iconLink={ROUTES.ARTICLES}
+              />
+            )}
           </div>
         </div>
         {(() => {
-          if (loading !== 'idle') return <h1>Loading</h1>;
+          if (loading !== 'idle') return <Loader />;
           if (error)
             return (
               <Alert title="Error" description="An error occurred. Sorry :(" status="danger" icon={ICONS.DANGER} />
             );
+
+          return (
+            <div className="article-body">
+              <Markdown source={data.content} />
+            </div>
+          );
         })()}
       </div>
     </div>

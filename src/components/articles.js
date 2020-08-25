@@ -5,6 +5,7 @@ import moment from 'moment';
 import { Alert, ROUTES } from '../App';
 import { ICONS } from './common/icon';
 import { Link } from 'react-router-dom';
+import Loader from './common/loader';
 
 function ArticleItem({ article }) {
   return (
@@ -59,7 +60,7 @@ export default function Articles() {
           </div>
         </div>
         {(() => {
-          if (loading !== 'idle') return <h1>Loading</h1>;
+          if (loading !== 'idle') return <Loader />;
           if (error)
             return (
               <Alert title="Error" description="An error occurred. Sorry :(" status="danger" icon={ICONS.DANGER} />
