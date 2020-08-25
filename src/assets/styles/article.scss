@@ -67,6 +67,11 @@
       a {
         color: $color-primary;
       }
+
+      pre {
+        border-radius: 4px;
+        background-color: rgba($color-secondary, 0.2) !important;
+      }
     }
   }
 }

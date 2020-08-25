@@ -7,6 +7,7 @@ import { fetchArticle } from '../slices/articleSlice';
 import moment from 'moment';
 import Loader from './common/loader';
 import Markdown from 'react-markdown';
+import CodeBlock from './common/codeBlock';
 
 export default function Article() {
   const { id } = useParams();
@@ -54,7 +55,7 @@ export default function Article() {
 
           return (
             <div className="article-body">
-              <Markdown source={data.content} />
+              <Markdown source={data.content} renderers={{ code: CodeBlock }} />
             </div>
           );
         })()}
