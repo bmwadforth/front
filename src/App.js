@@ -9,6 +9,7 @@ import MetaLine from './components/common/metaLine';
 import Articles from './components/articles';
 import Article from './components/article';
 import { isMobile } from 'react-device-detect';
+import ErrorBoundary from './components/errorBoundary';
 
 export const ROUTES = {
   HOME: '/',
@@ -66,27 +67,20 @@ function App() {
   }, [dispatch]);
   return (
     <div className="App">
-      <Router>
-        <main>
-          <Switch>
-            <Route exact path={ROUTES.HOME} component={Dashboard} />
-            {(() => {
-              if (!isMobile) {
-                return (
-                  <>
-                    <Route exact path={ROUTES.ARTICLES} component={Articles} />
-                    <Route exact path={ROUTES.ARTICLE()} component={Article} />
-                  </>
-                );
-              }
-            })()}
-
-            <Route exact component={NotFound} />
-          </Switch>
-        </main>
-        <SocialLine />
-        {/*<Navigation />*/}
-      </Router>
+      <ErrorBoundary>
+        <Router>
+          <main>
+            <Switch>
+              <Route exact path={ROUTES.HOME} component={Dashboard} />
+              {!isMobile && <Route exact path={ROUTES.ARTICLES} component={Articles} />}
+              {!isMobile && <Route exact path={ROUTES.ARTICLE()} component={Article} />}
+              <Route exact component={NotFound} />
+            </Switch>
+          </main>
+          <SocialLine />
+          {/*<Navigation />*/}
+        </Router>
+      </ErrorBoundary>
     </div>
   );
 }

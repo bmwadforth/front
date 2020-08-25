@@ -41,7 +41,8 @@ body {
   border: 0.5px solid gray;
   width: 100%;
 }
-.not-found {
+.not-found,
+.error {
   height: 100%;
   background: url('../vectors/cyborg-page-not-found.svg') no-repeat center bottom;
   background-size: auto;
@@ -66,6 +67,23 @@ body {
     }
     sub {
       color: $color-primary;
+    }
+  }
+}
+
+.error {
+  background: url('../vectors/cyborg-16.svg') no-repeat center bottom;
+
+  .alert {
+    border-radius: 0;
+  }
+  .alert-danger {
+    background-color: red;
+    color: black;
+    svg {
+      path {
+        fill: black !important;
+      }
     }
   }
 }

@@ -2,10 +2,10 @@ import axios from 'axios';
 
 class APIHelper {
   constructor(path, noBase = false) {
-    this.BASE = 'http://localhost:8080/api/v1';
+    this.BASE = process.env.REACT_APP_HOST || 'http://localhost:8080/api/v1';
     this.axios = axios;
     if (!noBase) {
-      axios.defaults.baseURL = 'http://localhost:8080/api/v1';
+      axios.defaults.baseURL = process.env.REACT_APP_HOST || 'http://localhost:8080/api/v1';
     }
     // Add cookie/session/headers here too.
     this.path = path;
