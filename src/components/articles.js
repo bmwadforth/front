@@ -4,25 +4,42 @@ import { fetchArticles, selectArticles } from '../slices/articleSummarySlice';
 import moment from 'moment';
 import { Alert, ROUTES } from '../App';
 import { ICONS } from './common/icon';
+import { Link } from 'react-router-dom';
 
 function ArticleItem({ article }) {
   return (
-    <div className="article-item">
-      <p>{article.title}</p>
-      <p>{article.description}</p>
+    <Link to={ROUTES.ARTICLE(article.id)}>
+      <div className="article-item">
+        <div className="article-title">
+          <h1>{article.title}</h1>
+          <p>{article.description}</p>
+        </div>
 
-      <p>Likes: {article.likes}</p>
-      <p>Comments: {article.comments.length}</p>
-      <p>Created: {moment(article.createdAt).format('MMMM Do - YYYY')}</p>
-    </div>
+        <div className="article-body">
+          <img src={article.image} alt="Article thumbnail" />
+        </div>
+
+        <div className="article-footer">
+          {/*
+          <span>
+            <sub>{article.likes} Likes</sub>
+          </span>
+          <span>
+            <sub>{article.comments.length} Comments</sub>
+          </span>*/}
+          <span>
+            <sub className="created-date">{moment(article.createdAt).format('DD/MM/YYYY')}</sub>
+          </span>
+        </div>
+      </div>
+    </Link>
   );
 }
 
 export default function Articles() {
   const dispatch = useDispatch();
-  const { loading } = useSelector((state) => state.articleSummary);
+  const { loading, data, error } = useSelector((state) => state.articleSummary);
 
-  let data = [];
   useEffect(() => {
     dispatch(fetchArticles());
   }, [dispatch]);
@@ -43,6 +60,10 @@ export default function Articles() {
         </div>
         {(() => {
           if (loading !== 'idle') return <h1>Loading</h1>;
+          if (error)
+            return (
+              <Alert title="Error" description="An error occurred. Sorry :(" status="danger" icon={ICONS.DANGER} />
+            );
           if (data.length === 0)
             return <Alert title="No Articles" description="Check back later" status="warning" icon={ICONS.WARNING} />;
           return (

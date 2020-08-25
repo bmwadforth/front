@@ -7,6 +7,23 @@
   border-radius: 4px;
 
   &.alert-info {
+    background-color: $color-secondary;
+    color: black;
+    svg {
+      path {
+        fill: black !important;
+      }
+    }
+  }
+
+  &.alert-danger {
+    background-color: red;
+    color: black;
+    svg {
+      path {
+        fill: black !important;
+      }
+    }
   }
 
   &.alert-warning {

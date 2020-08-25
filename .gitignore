@@ -2,6 +2,7 @@
 
 # custom
 /.idea
+/public/*.svg
 
 # dependencies
 /node_modules

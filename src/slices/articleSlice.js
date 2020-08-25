@@ -50,7 +50,7 @@ export const fetchArticle = (id) => async (dispatch) => {
 
   dispatch(startFetchArticles());
   try {
-    const articles = await ArticleApi.fetch();
+    const articles = await ArticleApi.fetch(id);
 
     dispatch(successFetchArticles(articles));
   } catch (e) {

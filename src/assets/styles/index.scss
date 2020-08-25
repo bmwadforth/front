@@ -5,6 +5,7 @@
 @import 'icon';
 @import 'alert';
 @import 'articles';
+@import 'article';
 @import 'variables';
 
 * {
@@ -69,10 +70,11 @@ body {
 }
 
 .social-line {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: $color-default;
+  background-color: $color-default-solid;
+  border-top: 2px solid $color-primary;
   height: 40px;
   .social-icons {
     height: 100%;

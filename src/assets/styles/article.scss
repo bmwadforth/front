@@ -1,0 +1,102 @@
+@import 'variables';
+
+.article-container {
+  width: 100%;
+  margin: 0 auto;
+
+  .article {
+    margin: 0 auto;
+    .article-title {
+      background: $color-default-solid url('../vectors/cyborg-message-sent.svg') no-repeat right;
+      border-bottom: 2px solid $color-primary;
+      background-size: inherit;
+      height: 200px;
+      border-radius: 0 0 4px 4px;
+      font-size: 1.5em;
+
+      @media only screen and (max-width: 800px) {
+        background-size: contain;
+        background-position: right;
+      }
+
+      .article-title-content {
+        padding: 0.85em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .alert {
+          width: 50%;
+        }
+
+        @media only screen and (max-width: 800px) {
+          padding-left: 0;
+        }
+
+        h1 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          font-size: 0.5em;
+        }
+      }
+    }
+
+    .alert {
+      border-radius: 0;
+    }
+
+    .article-list {
+      width: 100%;
+      padding: 0 3em;
+      margin: 1em auto 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .article-title {
+        padding: 1em;
+        border-bottom: 1px solid $color-primary;
+        width: 100%;
+        background-color: $color-default-solid;
+
+        h1 {
+          font-weight: normal;
+          font-size: 1.5em;
+          margin: 0;
+        }
+        p {
+          margin: 0.25em 0 0;
+          font-size: 0.9em;
+          font-weight: lighter;
+        }
+      }
+
+      background-color: $color-default;
+      transition: all 0.3s ease;
+      &:hover {
+        cursor: pointer;
+        color: $color-primary;
+      }
+
+      .article-body {
+        height: 225px;
+        background-color: white;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

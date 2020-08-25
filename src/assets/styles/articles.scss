@@ -7,10 +7,12 @@
   .articles {
     margin: 0 auto;
     .articles-title {
-      background: $color-default url('../vectors/cyborg-message-sent.svg') no-repeat right;
+      background: $color-default-solid url('../vectors/cyborg-message-sent.svg') no-repeat right;
+      border-bottom: 2px solid $color-primary;
       background-size: inherit;
       height: 200px;
       border-radius: 0 0 4px 4px;
+      font-size: 1.5em;
 
       @media only screen and (max-width: 800px) {
         background-size: contain;
@@ -42,21 +44,83 @@
     }
 
     .article-list {
-      width: 80%;
-      margin: 0 auto;
+      width: 100%;
+      padding: 0 3em;
+      margin: 1em auto 50px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 25px;
+      grid-gap: 20px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
       .article-item {
-        min-height: 200px;
-        padding: 1em;
-        background-color: rgba(gray, 0.1);
+        border-radius: 4px;
+        height: 350px;
+        position: relative;
+        overflow: hidden;
 
-        transition: background-color 0.3s ease;
+        .article-title {
+          padding: 1em;
+          border-bottom: 1px solid $color-primary;
+          width: 100%;
+          background-color: $color-default-solid;
+
+          h1 {
+            font-weight: normal;
+            font-size: 1.5em;
+            margin: 0;
+          }
+          p {
+            margin: 0.25em 0 0;
+            font-size: 0.9em;
+            font-weight: lighter;
+          }
+        }
+
+        background-color: $color-default;
+        transition: all 0.3s ease;
         &:hover {
           cursor: pointer;
-          background-color: rgba(gray, 0.3);
+          color: $color-primary;
+        }
+
+        .article-body {
+          height: 225px;
+          background-color: white;
+
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .article-footer {
+          padding: 0 1em 0.5em;
+          position: absolute;
+          bottom: 0;
+          min-height: 15px;
+          border-top: 1px solid $color-primary;
+          width: 100%;
+          background-color: rgba($color-secondary, 0.8);
+          display: flex;
+          justify-content: right;
+          align-items: center;
+
+          span {
+            padding-right: 1em;
+
+            sub {
+              font-weight: normal;
+              &.created-date {
+                font-weight: bold;
+              }
+            }
+          }
         }
       }
     }

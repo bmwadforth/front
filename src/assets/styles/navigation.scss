@@ -2,7 +2,8 @@
 
 .navigation-container {
   width: 100%;
-  background-color: $color-default;
+  background-color: $color-default-solid;
+  border-bottom: 2px solid $color-primary;
   height: 70px;
 
   @media only screen and (max-width: 800px) {
