@@ -8,6 +8,7 @@ import SocialLine from './components/common/social';
 import MetaLine from './components/common/metaLine';
 import Articles from './components/articles';
 import Article from './components/article';
+import { isMobile } from 'react-device-detect';
 
 export const ROUTES = {
   HOME: '/',
@@ -69,8 +70,17 @@ function App() {
         <main>
           <Switch>
             <Route exact path={ROUTES.HOME} component={Dashboard} />
-            <Route exact path={ROUTES.ARTICLES} component={Articles} />
-            <Route exact path={ROUTES.ARTICLE()} component={Article} />
+            {(() => {
+              if (!isMobile) {
+                return (
+                  <>
+                    <Route exact path={ROUTES.ARTICLES} component={Articles} />
+                    <Route exact path={ROUTES.ARTICLE()} component={Article} />
+                  </>
+                );
+              }
+            })()}
+
             <Route exact component={NotFound} />
           </Switch>
         </main>
