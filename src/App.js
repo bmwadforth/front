@@ -10,6 +10,7 @@ import Articles from './components/articles';
 import Article from './components/article';
 import { isMobile } from 'react-device-detect';
 import ErrorBoundary from './components/errorBoundary';
+import Projects from './components/projects';
 
 export const ROUTES = {
   HOME: '/',
@@ -19,6 +20,13 @@ export const ROUTES = {
       return `/article/${id}`;
     } else {
       return '/article/:id';
+    }
+  },
+  PROJECT: (id) => {
+    if (id) {
+      return `/project/${id}`;
+    } else {
+      return '/project/:id';
     }
   },
   PROJECTS: '/projects',
@@ -74,6 +82,7 @@ function App() {
               <Route exact path={ROUTES.HOME} component={Dashboard} />
               {!isMobile && <Route exact path={ROUTES.ARTICLES} component={Articles} />}
               {!isMobile && <Route exact path={ROUTES.ARTICLE()} component={Article} />}
+              {!isMobile && <Route exact path={ROUTES.PROJECTS} component={Projects} />}
               <Route exact component={NotFound} />
             </Switch>
           </main>

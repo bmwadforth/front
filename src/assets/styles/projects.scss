@@ -1,0 +1,118 @@
+@import 'variables';
+
+.projects-container {
+  width: 100%;
+  margin: 0 auto;
+
+  .projects {
+    margin: 0 auto;
+    .projects-title {
+      background: $color-default-solid url('../vectors/cyborg-page-not-found.svg') no-repeat right;
+      border-bottom: 2px solid $color-primary;
+      background-size: inherit;
+      height: 200px;
+      border-radius: 0 0 4px 4px;
+      font-size: 1.5em;
+
+      @media only screen and (max-width: 800px) {
+        background-size: contain;
+        background-position: right;
+      }
+
+      .projects-title-content {
+        padding: 0.85em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media only screen and (max-width: 800px) {
+          padding-left: 0;
+        }
+
+        h1 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .alert {
+      border-radius: 0;
+    }
+
+    .project-list {
+      width: 100%;
+      padding: 0 3em;
+      margin: 1em auto 50px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .project-item {
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+        height: 170px;
+
+        .project-title {
+          padding: 1em;
+          border-bottom: 1px solid $color-primary;
+          width: 100%;
+          background-color: $color-default-solid;
+
+          transition: all 0.3s ease;
+          &:hover {
+            cursor: pointer;
+            color: $color-primary;
+          }
+
+          h1 {
+            font-weight: normal;
+            font-size: 1.5em;
+            margin: 0;
+          }
+          p {
+            margin: 0.25em 0 0;
+            font-size: 0.9em;
+            font-weight: lighter;
+          }
+        }
+
+        .project-body {
+          height: 0;
+          background-color: white;
+        }
+
+        .project-footer {
+          padding: 0 1em 0.5em;
+          min-height: 15px;
+          border-top: 1px solid $color-primary;
+          width: 100%;
+          background-color: rgba($color-secondary, 0.8);
+
+          p {
+            font-size: 0.85em;
+            margin: 0.5em 0 0;
+          }
+
+          a {
+            font-size: 0.75em;
+            transition: color 0.3s ease;
+            &:hover {
+              text-decoration: underline;
+              color: $color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
