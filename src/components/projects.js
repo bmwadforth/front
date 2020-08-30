@@ -51,7 +51,7 @@ export default function Projects() {
           <div className="projects-title-content">
             <Alert
               title="Projects"
-              description="The hardest thing about a project is finishing it."
+              description="The perfect project plan is possible if one first documents a list of all the unknowns."
               status="transparent"
               icon={ICONS.BACK}
               iconLink={ROUTES.HOME}
