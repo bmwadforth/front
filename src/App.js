@@ -80,9 +80,9 @@ function App() {
           <main>
             <Switch>
               <Route exact path={ROUTES.HOME} component={Dashboard} />
-              {!isMobile && <Route exact path={ROUTES.ARTICLES} component={Articles} />}
-              {!isMobile && <Route exact path={ROUTES.ARTICLE()} component={Article} />}
-              {!isMobile && <Route exact path={ROUTES.PROJECTS} component={Projects} />}
+              <Route exact path={ROUTES.ARTICLES} component={Articles} />
+              <Route exact path={ROUTES.ARTICLE()} component={Article} />
+              <Route exact path={ROUTES.PROJECTS} component={Projects} />
               <Route exact component={NotFound} />
             </Switch>
           </main>
