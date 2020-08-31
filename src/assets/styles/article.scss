@@ -15,8 +15,7 @@
       font-size: 1.5em;
 
       @media only screen and (max-width: 800px) {
-        background-size: contain;
-        background-position: right;
+        background: $color-default-solid;
       }
 
       .article-title-content {
@@ -41,6 +40,10 @@
 
         @media only screen and (max-width: 800px) {
           padding-left: 0;
+          font-size: 0.8em;
+          .alert {
+            width: 100%;
+          }
         }
 
         h1 {
@@ -62,6 +65,10 @@
       margin-bottom: 40px;
       background-color: $color-default-solid;
       border-radius: 4px;
+
+      @media only screen and (max-width: 800px) {
+        padding: 2em 1em;
+      }
 
       color: $color-secondary;
       a {

@@ -28,6 +28,10 @@
 
         @media only screen and (max-width: 800px) {
           padding-left: 0;
+          font-size: 0.5em;
+          .alert {
+            padding-right: 50%;
+          }
         }
 
         h1 {
@@ -49,6 +53,10 @@
       margin: 1em auto 50px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 1em;
+      }
       grid-gap: 20px;
 
       a {
@@ -60,7 +68,10 @@
         border-radius: 4px;
         position: relative;
         overflow: hidden;
-        height: 170px;
+
+        @media only screen and (max-width: 800px) {
+          height: auto;
+        }
 
         .project-title {
           padding: 1em;

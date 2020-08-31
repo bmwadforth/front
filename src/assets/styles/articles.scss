@@ -28,6 +28,10 @@
 
         @media only screen and (max-width: 800px) {
           padding-left: 0;
+          font-size: 0.5em;
+          .alert {
+            padding-right: 50%;
+          }
         }
 
         h1 {
@@ -50,6 +54,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 20px;
+
+      @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 1em;
+      }
 
       a {
         text-decoration: none;
