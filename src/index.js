@@ -5,6 +5,10 @@ import store from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import './assets/styles/index.scss';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-178141115-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
   <React.StrictMode>
