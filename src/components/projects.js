@@ -12,7 +12,7 @@ function ProjectItem({ project }) {
   return (
     <>
       <div className="project-item">
-        <a href={`https://github.com/bmwadforth/${project.title}`}>
+        <a href={`https://github.com/fntmx/${project.title}`}>
           <div className="project-title">
             <h1>{project.title}</h1>
             <p>{project.description}</p>
@@ -27,7 +27,7 @@ function ProjectItem({ project }) {
 
         <div className="project-footer">
           <p>Last Commit Hash</p>
-          <a href={`https://github.com/bmwadforth/${project.title}/commit/${project.githubMeta.hash}`}>
+          <a href={`https://github.com/fntmx/${project.title}/commit/${project.githubMeta.hash}`}>
             <span>{project.githubMeta.hash}</span>
           </a>
         </div>
