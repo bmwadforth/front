@@ -50,13 +50,7 @@ export default function Articles() {
       <div className="articles">
         <div className="articles-title">
           <div className="articles-title-content">
-            <Alert
-              title="Articles"
-              description="Scientia ipsa potentia est."
-              status="transparent"
-              icon={ICONS.BACK}
-              iconLink={ROUTES.HOME}
-            />
+            <Alert title="Articles" description="📖 ✍️" status="transparent" icon={ICONS.BACK} iconLink={ROUTES.HOME} />
           </div>
         </div>
         {(() => {
