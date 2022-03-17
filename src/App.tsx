@@ -1,15 +1,21 @@
 import React from 'react';
-import { Container, Breadcrumbs, Link as MuiLink, Typography, Box, ButtonGroup, Button } from '@mui/material';
+import { Container, Breadcrumbs, Link as MuiLink, Box } from '@mui/material';
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
-  Link
+  Link, useLocation
 } from "react-router-dom";
-import Articles from './components/articles';
-import ArticleContent from './components/articleContent';
 import ArticlesPage from "./pages/articles/articles";
 import ArticleViewPage from "./pages/articles/articleView";
+import NotFoundPage from "./pages/notFoundPage";
+
+export const ApplicationRoutes = {
+  INDEX: '/',
+  ARTICLES: '/articles',
+  ARTICLE: '/article/:articleId',
+  PROJECTS: 'projects',
+  ABOUT: '/about'
+}
 
 function HomeComponent() {
   return (
@@ -20,37 +26,46 @@ function HomeComponent() {
 }
 
 function App() {
+  const { pathname } = useLocation();
+
+  const isActive = (path: string): string => {
+    if (pathname === path) {
+      return 'text.primary'
+    } else {
+      return 'text.secondary'
+    }
+  }
+
   return (
     <Container sx={{ mt: '50px' }}>
-      <Router>
-        <Breadcrumbs aria-label="breadcrumb">
-          <MuiLink underline="hover" color="inherit" href="#" component="span">
-            <Link to='/'>
-              Home
-            </Link>
-          </MuiLink>
-          <MuiLink underline="hover" color="inherit" href="#" component="span">
-            <Link to='/articles'>
-              Articles
-            </Link>
-          </MuiLink>
-          <MuiLink underline="hover" color="inherit" href="#" component="span">
-            <Link to='/projects'>
-              Projects
-            </Link>
-          </MuiLink>
-          <MuiLink underline="hover" color="inherit" href="#" component="span">
-            <Link to='/about'>
-              About
-            </Link>
-          </MuiLink>
-        </Breadcrumbs>
-        <Routes>
-          <Route path='/' element={<HomeComponent />} />
-          <Route path='/articles' element={<ArticlesPage />} />
-          <Route path='/article/:articleId' element={<ArticleViewPage />} />
-        </Routes>
-      </Router>
+      <Breadcrumbs aria-label="breadcrumb">
+        <MuiLink underline="hover" color={isActive(ApplicationRoutes.INDEX)} href="#" component="span" variant='subtitle1'>
+          <Link to={ApplicationRoutes.INDEX}>
+            Bmwadforth<b>dot</b>com
+          </Link>
+        </MuiLink>
+        <MuiLink underline="hover" color={isActive(ApplicationRoutes.ARTICLES)} href="#" component="span" variant='subtitle1'>
+          <Link to={ApplicationRoutes.ARTICLES}>
+            Articles
+          </Link>
+        </MuiLink>
+        <MuiLink underline="hover" color={isActive(ApplicationRoutes.PROJECTS)} href="#" component="span" variant='subtitle1'>
+          <Link to={ApplicationRoutes.PROJECTS}>
+            Projects
+          </Link>
+        </MuiLink>
+        <MuiLink underline="hover" color={isActive(ApplicationRoutes.ABOUT)} href="#" component="span" variant='subtitle1'>
+          <Link to={ApplicationRoutes.ABOUT}>
+            About
+          </Link>
+        </MuiLink>
+      </Breadcrumbs>
+      <Routes>
+        <Route path={ApplicationRoutes.INDEX} element={<HomeComponent />} />
+        <Route path={ApplicationRoutes.ARTICLES} element={<ArticlesPage />} />
+        <Route path={ApplicationRoutes.ARTICLE} element={<ArticleViewPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </Container>
   );
 }
