@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Articles from './components/articles';
 import ArticleContent from './components/articleContent';
+import ArticlesPage from "./pages/articles/articles";
+import ArticleViewPage from "./pages/articles/articleView";
 
 function HomeComponent() {
   return (
@@ -45,8 +47,8 @@ function App() {
         </Breadcrumbs>
         <Routes>
           <Route path='/' element={<HomeComponent />} />
-          <Route path='/articles' element={<Articles />} />
-          <Route path='/article/:id' element={<ArticleContent />} />
+          <Route path='/articles' element={<ArticlesPage />} />
+          <Route path='/article/:articleId' element={<ArticleViewPage />} />
         </Routes>
       </Router>
     </Container>

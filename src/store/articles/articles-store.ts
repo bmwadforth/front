@@ -1,7 +1,6 @@
-import { atom, selector } from 'recoil';
+import {atom, selector, selectorFamily} from 'recoil';
 import axiosClient from '../apiClient';
-import { IApiResponse } from '../base';
-import { articlesThumbnailStateSelector } from './article-data-store';
+import {IApiResponse} from '../base';
 
 export interface IArticle {
     articleId: number;
@@ -12,27 +11,58 @@ export interface IArticle {
     createdDate: Date;
     updatedDate: Date;
     thumbnailDataUrl: string;
+    contentDataUrl: string;
+    content?: string;
 }
 
-export interface IArticleState extends IApiResponse<IArticle[]> { }
+export interface IArticlesState extends IApiResponse<IArticle[]> {
+}
 
-export const articlesStateSelector = selector<IArticleState>({
+export interface IArticleState extends IApiResponse<IArticle> {
+}
+
+export const articlesStateSelector = selector<IArticlesState>({
     key: 'articlesStateSelector',
-    get: async ({ get }) => {
+    get: async ({get}) => {
         try {
-            const response = await axiosClient.get<IArticleState>('/api/v1/article');
+            const response = await axiosClient.get<IArticlesState>('/api/v1/article');
+
+            return response.data as IArticlesState;
+        } catch (error) {
+            throw error;
+        }
+    },
+    set: ({set}, newVal) => set(articlesState, newVal as IArticlesState)
+});
+
+const articlesState = atom<IArticlesState>({
+    key: 'articlesState',
+    default: {message: '', payload: undefined, errors: undefined} as IArticlesState
+});
+
+export const articleStateSelector = selectorFamily<IArticleState, string>({
+    key: 'articlesStateSelector',
+    get: (articleId: string) => async ({get}) => {
+        try {
+            const response = await axiosClient.get<IArticleState>(`/api/v1/article/${articleId}`);
+
+            const { payload } = response.data;
+            const contentUrl = payload?.contentDataUrl;
+            if (contentUrl) {
+                const contentResponse = await axiosClient.get(contentUrl);
+                payload!.content = contentResponse.data;
+            }
 
             return response.data as IArticleState;
         } catch (error) {
-            return {} as IArticleState;
+            throw error;
         }
-    },
-    set: ({ set }, newVal) => set(articlesState, newVal as IArticleState)
+    }
 });
 
-const articlesState = atom<IArticleState>({
-    key: 'articlesState',
-    default: { } as IArticleState
+const articleState = atom<IArticleState>({
+    key: 'articleState',
+    default: {message: '', payload: undefined, errors: undefined} as IArticleState
 });
 
 export default articlesState;

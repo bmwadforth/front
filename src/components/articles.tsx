@@ -1,24 +1,20 @@
 import React from 'react';
-import { useRecoilValueLoadable } from 'recoil';
-import { articlesStateSelector, IArticle } from '../store/articles/articles-store';
+import { IArticle } from '../store/articles/articles-store';
 import { Box } from '@mui/material';
 import { Masonry } from '@mui/lab';
 import ArticleTile from './articleTile';
-
-export interface IArticleTileProps {
-    article: IArticle;
-}
+import useArticles from "../hooks/useArticles";
 
 export default function Articles() {
-    const articles = useRecoilValueLoadable(articlesStateSelector);
+    const [loading, articles] = useArticles();
+    const {payload} = articles;
 
-    if (articles.state === "loading") return <h1>Loading</h1>
-
-    const {payload} = articles.contents;
+    if (loading) return <h1>Loading</h1>
+    if (payload === undefined) return <h1>Error</h1>
 
     return (
-        <Box sx={{ width: 500, minHeight: 829, marginTop: '50px'}}>
-            <Masonry columns={2} spacing={2}>
+        <Box sx={{ width: '100%', minHeight: 829, marginTop: '50px'}}>
+            <Masonry columns={4} spacing={2}>
                 {payload.map((article: IArticle, index: number) => (
                     <ArticleTile key={index} article={article} />
                 ))}
