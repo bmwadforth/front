@@ -26,7 +26,7 @@ export default function ArticleContent() {
 
     return (
         <Paper>
-            <Grid container style={{padding: '1em', margin: '25px 0', height: '100%'}}>
+            <Grid container style={{padding: '1em', height: '100%'}}>
                 <Grid item xs={12}>
                     <Stack direction="row" display='flex' alignItems={'center'} spacing={2}>
                         <Typography

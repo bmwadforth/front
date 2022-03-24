@@ -63,7 +63,7 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            {/*<Box sx={{flexGrow: 1}}>
+            <Box sx={{flexGrow: 1}}>
                     <AppBar position="static">
                         <Toolbar>
                             <Typography variant="h6" component="div">
@@ -71,9 +71,9 @@ function App() {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                </Box>*/}
+                </Box>
 
-            <Paper square elevation={6}>
+            <Paper square elevation={6} style={{padding: '50px 0'}}>
                 <Container>
                     <Routes>
                         <Route path={ApplicationRoutes.INDEX} element={<ArticlesPage/>}/>
