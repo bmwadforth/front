@@ -26,6 +26,6 @@ html, body, #root {
   flex-direction: column;
 }
 
-#root > .MuiPaper-root {
+#root > #content {
   flex-grow: 1;
 }

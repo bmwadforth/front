@@ -71,7 +71,7 @@ function App() {
                 </Toolbar>
             </AppBar>
 
-            <Paper square elevation={6} style={{padding: '50px 0'}}>
+            <Paper id="content" square elevation={6} style={{padding: '50px 0'}}>
                 <Container>
                     <Routes>
                         <Route path={ApplicationRoutes.INDEX} element={<ArticlesPage/>}/>
