@@ -14,6 +14,9 @@ jobs:
       contents: 'read'
       id-token: 'write'
 
+    env:
+      CI: 'false'
+
     steps:
       # actions/checkout MUST come before auth
       - uses: 'actions/checkout@v3'
