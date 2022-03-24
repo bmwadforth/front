@@ -106,5 +106,6 @@ jobs:
       - id: 'deploy'
         uses: 'google-github-actions/deploy-cloudrun@v0'
         with:
+          region: 'australia-southeast2'
           service: 'bmwadforth-frontend'
-          image: 'gcr.io/cloudrun/hello'
+          image: 'australia-southeast2-docker.pkg.dev/digital-node-1176/bmwadforth-docker/bmwadforth-frontend:latest'
