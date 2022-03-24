@@ -61,6 +61,9 @@ jobs:
       - id: 'sdk'
         name: 'Setup Google Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v0'
+
+      - id: 'configure-docker'
+        name: 'Configure docker'
         run: |
           gcloud auth configure-docker australia-southeast2-docker.pkg.dev
 
