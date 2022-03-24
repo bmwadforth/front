@@ -3,6 +3,6 @@
 /.?*
 
 # Except build folder
-!/artifacts
+!/build
 
 #!include:.gitignore
