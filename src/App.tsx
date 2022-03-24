@@ -63,15 +63,13 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{flexGrow: 1}}>
-                    <AppBar position="static">
-                        <Toolbar>
-                            <Typography variant="h6" component="div">
-                                Bmwadforth<b>dot</b>com
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
-                </Box>
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h6" component="div">
+                        Bmwadforth<b>dot</b>com
+                    </Typography>
+                </Toolbar>
+            </AppBar>
 
             <Paper square elevation={6} style={{padding: '50px 0'}}>
                 <Container>
