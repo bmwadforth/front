@@ -45,8 +45,8 @@ function App() {
         () =>
             createTheme({
                 palette: {
-                    //mode: prefersDarkMode ? 'dark' : 'light',
-                    mode: 'light'
+                    mode: prefersDarkMode ? 'dark' : 'light',
+
                 },
             }),
         [prefersDarkMode],
@@ -63,8 +63,7 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Box height="100vh" display="flex" flexDirection="column">
-                <Box sx={{flexGrow: 1}}>
+            {/*<Box sx={{flexGrow: 1}}>
                     <AppBar position="static">
                         <Toolbar>
                             <Typography variant="h6" component="div">
@@ -72,29 +71,26 @@ function App() {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                </Box>
+                </Box>*/}
 
-                <Box style={{display: 'block', height: '100%'}}>
-                    <Paper square elevation={6} style={{height: '100%'}}>
-                        <Container>
-                            <Routes>
-                                <Route path={ApplicationRoutes.INDEX} element={<ArticlesPage/>}/>
-                                <Route path={ApplicationRoutes.ARTICLES} element={<ArticlesPage/>}/>
-                                <Route path={ApplicationRoutes.ARTICLE} element={<ArticleViewPage/>}/>
-                                <Route path="*" element={<NotFoundPage/>}/>
-                            </Routes>
-                        </Container>
-                    </Paper>
-                </Box>
-                <BottomNavigation
-                    showLabels
-                >
-                    <BottomNavigationAction label="LinkedIn" icon={<LinkedIn/>}
-                                            onClick={() => window.location.replace('https://www.linkedin.com/in/brannon-wadforth-959b06120/')}/>
-                    <BottomNavigationAction label="GitHub" icon={<GitHub/>}
-                                            onClick={() => window.location.replace('"https://github.com/fntmx')}/>
-                </BottomNavigation>
-            </Box>
+            <Paper square elevation={6}>
+                <Container>
+                    <Routes>
+                        <Route path={ApplicationRoutes.INDEX} element={<ArticlesPage/>}/>
+                        <Route path={ApplicationRoutes.ARTICLES} element={<ArticlesPage/>}/>
+                        <Route path={ApplicationRoutes.ARTICLE} element={<ArticleViewPage/>}/>
+                        <Route path="*" element={<NotFoundPage/>}/>
+                    </Routes>
+                </Container>
+            </Paper>
+            <BottomNavigation
+                showLabels
+            >
+                <BottomNavigationAction label="LinkedIn" icon={<LinkedIn/>}
+                                        onClick={() => window.location.replace('https://www.linkedin.com/in/brannon-wadforth-959b06120/')}/>
+                <BottomNavigationAction label="GitHub" icon={<GitHub/>}
+                                        onClick={() => window.location.replace('https://github.com/fntmx')}/>
+            </BottomNavigation>
         </ThemeProvider>
     );
 }

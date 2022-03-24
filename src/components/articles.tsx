@@ -14,7 +14,7 @@ export default function Articles() {
     if (payload === undefined) return <h1>Error</h1>
 
     return (
-        <Box sx={{ width: '100%', minHeight: 829, marginTop: '50px'}}>
+        <Box sx={{ width: '100%'}}>
             <Masonry columns={2} spacing={2}>
                 {payload.map((article: IArticle, index: number) => (
                     <ArticleTile key={index} article={article} />

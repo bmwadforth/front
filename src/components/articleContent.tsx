@@ -25,41 +25,43 @@ export default function ArticleContent() {
 
 
     return (
-        <Grid container style={{padding: '1em', margin: '25px 0', height: '100%'}}>
-            <Grid item xs={12}>
-                <Stack direction="row" display='flex' alignItems={'center'} spacing={2}>
-                    <Typography
-                        variant="subtitle1">
-                        <IconButton aria-label="delete" onClick={() => navigate(ApplicationRoutes.ARTICLES)}>
-                            <ArrowBackIcon />
-                        </IconButton>
-                    </Typography>
-                    <Typography
-                        variant="subtitle1">{`${payload.title} - ${moment(payload.createdDate).format('LLL')}`}</Typography>
-                </Stack>
+        <Paper>
+            <Grid container style={{padding: '1em', margin: '25px 0', height: '100%'}}>
+                <Grid item xs={12}>
+                    <Stack direction="row" display='flex' alignItems={'center'} spacing={2}>
+                        <Typography
+                            variant="subtitle1">
+                            <IconButton aria-label="delete" onClick={() => navigate(ApplicationRoutes.ARTICLES)}>
+                                <ArrowBackIcon />
+                            </IconButton>
+                        </Typography>
+                        <Typography
+                            variant="subtitle1">{`${payload.title} - ${moment(payload.createdDate).format('LLL')}`}</Typography>
+                    </Stack>
+                </Grid>
+                <Divider/>
+                <Grid item xs={12}>
+                    <ReactMarkdown children={payload.content} components={{
+                        code({node, inline, className, children, ...props}) {
+                            const match = /language-(\w+)/.exec(className || '')
+                            return !inline && match ? (
+                                <SyntaxHighlighter
+                                    children={String(children).replace(/\n$/, '')}
+                                    style={vscDarkPlus}
+                                    language={match[1]}
+                                    showLineNumbers={true}
+                                    PreTag="div"
+                                    {...props}
+                                />
+                            ) : (
+                                <code className={className} {...props}>
+                                    {children}
+                                </code>
+                            )
+                        }
+                    }}/>
+                </Grid>
             </Grid>
-            <Divider/>
-            <Grid item xs={12}>
-                <ReactMarkdown children={payload.content} components={{
-                    code({node, inline, className, children, ...props}) {
-                        const match = /language-(\w+)/.exec(className || '')
-                        return !inline && match ? (
-                            <SyntaxHighlighter
-                                children={String(children).replace(/\n$/, '')}
-                                style={vscDarkPlus}
-                                language={match[1]}
-                                showLineNumbers={true}
-                                PreTag="div"
-                                {...props}
-                            />
-                        ) : (
-                            <code className={className} {...props}>
-                                {children}
-                            </code>
-                        )
-                    }
-                }}/>
-            </Grid>
-        </Grid>
+        </Paper>
     )
 }
