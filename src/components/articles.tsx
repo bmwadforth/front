@@ -1,6 +1,6 @@
 import React from 'react';
 import { IArticle } from '../store/articles/articles-store';
-import {Box} from '@mui/material';
+import {Box, Paper} from '@mui/material';
 import { Masonry } from '@mui/lab';
 import ArticleTile from './articleTile';
 import useArticles from "../hooks/useArticles";
@@ -15,7 +15,7 @@ export default function Articles() {
 
     return (
         <Box sx={{ width: '100%', minHeight: 829, marginTop: '50px'}}>
-            <Masonry columns={4} spacing={2}>
+            <Masonry columns={2} spacing={2}>
                 {payload.map((article: IArticle, index: number) => (
                     <ArticleTile key={index} article={article} />
                 ))}
