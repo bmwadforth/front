@@ -1,4 +1,8 @@
-#!include:.gitignore
-/node_modules/
-/src/
-*~
+# Ignore everything by default
+/*
+
+# Allow build folder
+!build/**
+
+# Allow current directory
+!.
