@@ -1,0 +1,31 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      CI: 'false'
+    steps:
+      - uses: 'actions/checkout@v3'
+      - uses: actions/setup-node@v2
+        name: Setup Node
+        with:
+          node-version: 16
+
+      - run: npm install
+        name: Install
+
+      - run: npm run build
+        name: Build
+      - run: npm run test
+        name: Test
+
+      - name: Archive Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: |
+            build
+          retention-days: 1
