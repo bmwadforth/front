@@ -5,6 +5,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CI: 'false'
     steps:
       - uses: 'actions/checkout@v3'
       - uses: actions/setup-node@v2
