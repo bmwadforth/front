@@ -25,11 +25,10 @@ jobs:
         with:
           node-version: 16
 
-      - run: npm install
-        name: Install
-
-      - run: npm run build
-        name: Build
+      - name: Restore Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: artifacts
 
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
