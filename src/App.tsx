@@ -87,7 +87,7 @@ function App() {
                 <BottomNavigationAction label="LinkedIn" icon={<LinkedIn/>}
                                         onClick={() => window.location.replace('https://www.linkedin.com/in/brannon-wadforth-959b06120/')}/>
                 <BottomNavigationAction label="GitHub" icon={<GitHub/>}
-                                        onClick={() => window.location.replace('https://github.com/fntmx')}/>
+                                        onClick={() => window.location.replace('https://github.com/bmwadforth')}/>
             </BottomNavigation>
         </ThemeProvider>
     );
