@@ -91,6 +91,8 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            GOOGLE_APPLICATION_CREDENTIALS=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
           tags: australia-southeast2-docker.pkg.dev/digital-node-1176/bmwadforth-docker/bmwadforth-frontend:latest
 
   deploy:
