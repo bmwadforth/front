@@ -1,20 +1,16 @@
 FROM node:alpine as application
 
 ENV NODE_ENV production
-ARG GOOGLE_APPLICATION_CREDENTIALS
-ENV GOOGLE_APPLICATION_CREDENTIALS $GOOGLE_APPLICATION_CREDENTIALS
-
 WORKDIR /app
 
 COPY package.json .
 COPY package-lock.json .
 COPY .npmrc .
 
-RUN npx google-artifactregistry-auth
 RUN npm install
 COPY . .
 
-RUN npm build
+RUN npm run build
 
 # Bundle static assets with nginx
 FROM nginx:latest as production
