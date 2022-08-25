@@ -8,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CI: 'false'
+    permissions:
+      contents: 'write'
+      id-token: 'write'
+
     steps:
       - uses: 'actions/checkout@v3'
       - uses: actions/setup-node@v2
@@ -48,12 +52,11 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/master'
 
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-
     env:
       CI: 'false'
+    permissions:
+      contents: 'write'
+      id-token: 'write'
 
     steps:
       - uses: 'actions/checkout@v3'
@@ -95,13 +98,11 @@ jobs:
     needs: [ build, publish ]
     if: github.ref == 'refs/heads/master'
 
-    # Add "id-token" with the intended permissions.
-    permissions:
-      contents: 'read'
-      id-token: 'write'
-
     env:
       CI: 'false'
+    permissions:
+      contents: 'write'
+      id-token: 'write'
 
     steps:
       # actions/checkout MUST come before auth
