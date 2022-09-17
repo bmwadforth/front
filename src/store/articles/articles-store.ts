@@ -25,7 +25,7 @@ export const articlesStateSelector = selector<IArticlesState>({
     key: 'articlesStateSelector',
     get: async ({get}) => {
         try {
-            const response = await axiosClient.get<IArticlesState>('/api/v1/article');
+            const response = await axiosClient.get<IArticlesState>('/article');
 
             return response.data as IArticlesState;
         } catch (error) {
@@ -44,7 +44,7 @@ export const articleStateSelector = selectorFamily<IArticleState, string>({
     key: 'articlesStateSelector',
     get: (articleId: string) => async ({get}) => {
         try {
-            const response = await axiosClient.get<IArticleState>(`/api/v1/article/${articleId}`);
+            const response = await axiosClient.get<IArticleState>(`/article/${articleId}`);
 
             const { payload } = response.data;
             const contentUrl = payload?.contentDataUrl;
