@@ -1,5 +1,5 @@
 import React from 'react';
-import { IArticle } from '../store/articles/articles-store';
+import { IArticle } from '../store/articles/articlesState';
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import moment from "moment";

@@ -1,5 +1,5 @@
 import React from 'react';
-import {IArticle} from '../store/articles/articles-store';
+import {IArticle} from '../store/articles/articlesState';
 import useArticle from "../hooks/useArticle";
 import {useNavigate, useParams} from "react-router-dom";
 import {Stack, Divider, Grid, Paper, Typography, IconButton} from "@mui/material";

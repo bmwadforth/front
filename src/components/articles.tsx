@@ -1,5 +1,5 @@
 import React from 'react';
-import { IArticle } from '../store/articles/articles-store';
+import { IArticle } from '../store/articles/articlesState';
 import {Box, useTheme, useMediaQuery} from '@mui/material';
 import { Masonry } from '@mui/lab';
 import ArticleTile from './articleTile';
