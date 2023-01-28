@@ -1,4 +1,4 @@
-import {articleStateSelector, IArticleState} from "../store/articles/articles-store";
+import {articleStateSelector, IArticleState} from "../store/articles/articlesState";
 import {useRecoilValueLoadable} from "recoil";
 import {useEffect} from "react";
 

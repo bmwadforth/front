@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {
     Container,
     Paper,
@@ -10,7 +10,7 @@ import {
 import {
     Route,
     Routes,
-    Link, useLocation, useNavigate
+    useLocation, useNavigate
 } from "react-router-dom";
 import ArticlesPage from "./pages/articles/articles";
 import ArticleViewPage from "./pages/articles/articleView";
@@ -20,13 +20,20 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import ErrorBoundary from './pages/errorPage';
+import AdminPage from './pages/adminPage';
+import {useRecoilValue} from "recoil";
+import userState from "./store/articles/userState";
+import LoginPage from "./pages/loginPage";
+import {Spinner} from "reactstrap";
 
 export const ApplicationRoutes = {
     INDEX: '/',
     ARTICLES: '/articles',
     ARTICLE: '/article/:articleId',
     PROJECTS: 'projects',
-    ABOUT: '/about'
+    ABOUT: '/about',
+    ADMIN: '/admin',
+    LOGIN: '/login'
 }
 
 function HomeComponent() {
@@ -39,6 +46,7 @@ function HomeComponent() {
 
 
 function App() {
+    const user = useRecoilValue(userState);
     const navigate = useNavigate();
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
@@ -79,6 +87,8 @@ function App() {
                             <Route path={ApplicationRoutes.INDEX} element={<ArticlesPage />} />
                             <Route path={ApplicationRoutes.ARTICLES} element={<ArticlesPage />} />
                             <Route path={ApplicationRoutes.ARTICLE} element={<ArticleViewPage />} />
+                            <Route path={ApplicationRoutes.ADMIN} element={<Suspense fallback={<Spinner />}><AdminPage /></Suspense>} />
+                            <Route path={ApplicationRoutes.LOGIN} element={<Suspense fallback={<Spinner />}><LoginPage /></Suspense>} />
                             <Route path="*" element={<NotFoundPage />} />
                         </Routes>
                     </ErrorBoundary>
