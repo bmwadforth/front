@@ -2,6 +2,11 @@ import {atom, selector, selectorFamily} from 'recoil';
 import {IApiResponse} from '../base';
 import ArticleApiService from "../../util/articleApiService";
 
+export interface INewArticle {
+    title: string;
+    description: string;
+}
+
 export interface IArticle {
     articleId: number;
     title: string;
@@ -15,6 +20,11 @@ export interface IArticle {
     content?: string;
 }
 
+export interface INewArticleState {
+    id: number;
+    title: string;
+    description: string;
+}
 export interface IArticlesState extends IApiResponse<IArticle[]> {}
 
 export interface IArticleState extends IApiResponse<IArticle> {}
@@ -52,6 +62,11 @@ export const articleStateSelector = selectorFamily<IArticleState, string>({
 const articleState = atom<IArticleState>({
     key: 'articleState',
     default: {message: '', payload: undefined, errors: undefined} as IArticleState
+});
+
+export const newArticleState = atom<INewArticleState>({
+    key: 'newArticleState',
+    default: {id: 0, title: "", description: ""} as INewArticleState
 });
 
 export default articlesState;
