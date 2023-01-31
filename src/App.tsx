@@ -25,6 +25,10 @@ import {useRecoilValue} from "recoil";
 import userState from "./store/articles/userState";
 import LoginPage from "./pages/loginPage";
 import {Spinner} from "reactstrap";
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "UA-178141115-1";
+ReactGA.initialize(TRACKING_ID);
 
 export const ApplicationRoutes = {
     INDEX: '/',
