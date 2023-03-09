@@ -1,10 +1,12 @@
 import { Box } from "@mui/system";
-import { Alert, AlertColor, Button, Snackbar, TextField } from "@mui/material";
+import { Alert, AlertColor, Snackbar } from "@mui/material";
 import { useState } from "react";
 import UserApiService from "../util/userApiService";
-import {useRecoilState} from "recoil";
-import {useNavigate} from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
 import userState from "../store/articles/userState";
+import { BoxAlignment, Group, InputType, TextField, Button, ColourType } from "@bmwadforth/armor-ui";
+import '../styles/userLogin.scss';
 
 export default function UserLogin() {
     const [user, setUser] = useRecoilState(userState);
@@ -21,10 +23,10 @@ export default function UserLogin() {
             await apiService.loginUser(form.username, form.password);
 
             setShowAlert({ status: 'success', message: 'Successfully Logged In' });
-            setUser({username: form.username, isLoggedIn: true, loggedInSince: new Date()});
+            setUser({ username: form.username, isLoggedIn: true, loggedInSince: new Date() });
         } catch (e) {
             setShowAlert({ status: 'error', message: 'Failed to login' });
-            setUser({username: '', isLoggedIn: false, loggedInSince: null});
+            setUser({ username: '', isLoggedIn: false, loggedInSince: null });
         }
     }
 
@@ -47,13 +49,15 @@ export default function UserLogin() {
                         {showAlert.message}
                     </Alert>
                 </Snackbar>}
-            <Box my='4'>
-                <TextField id="username" name='username' label="Username" variant="filled" onChange={(e: any) => onChange('username', e.target.value)} />
-                <TextField id="password" name='password' label="Password" variant="filled" type="password" onChange={(e: any) => onChange('password', e.target.value)} />
-            </Box>
-            <Button sx={{width: '100%', mt: 2}} variant="contained" type='submit' onClick={onSubmit}>
-                Login
-            </Button>
+            <Group alignment={BoxAlignment.Row}>
+                <TextField id="username" title="Username" onChange={(e: any) => onChange('username', e.target.value)} type={InputType.Text} />
+                <TextField id="password" title="Password" onChange={(e: any) => onChange('password', e.target.value)} type={InputType.Text} />
+            </Group>
+            <Button
+                color={ColourType.Primary}
+                onClick={onSubmit}
+                title="Submit"
+            />
         </Box>
     )
 }
