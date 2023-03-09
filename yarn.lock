@@ -1069,10 +1069,10 @@
   "resolved" "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   "version" "0.2.3"
 
-"@bmwadforth/armor-ui@^0.2.0":
-  "integrity" "sha512-YKrQwzVCPvogkKuDHE9G7jEgLXS2a3DASSuooqRQOmj+JOZwAaiCHzpZK/O+Rp8iYFsYlBizsiITOWnciofMow=="
-  "resolved" "https://australia-southeast2-npm.pkg.dev/digital-node-1176/bmwadforth-npm/@bmwadforth/armor-ui/-/@bmwadforth/armor-ui-0.2.0.tgz"
-  "version" "0.2.0"
+"@bmwadforth/armor-ui@^0.2.4":
+  "integrity" "sha512-RznuDTxUC9UtYSiObKdB8k2tYK499IyPyc6ByEWZhLG8KjaGkkSZOU7UAd1Ftxzu6+ZDTNwqDD3OFX2jN93pXw=="
+  "resolved" "https://australia-southeast2-npm.pkg.dev/digital-node-1176/bmwadforth-npm/@bmwadforth/armor-ui/-/@bmwadforth/armor-ui-0.2.4.tgz"
+  "version" "0.2.4"
 
 "@csstools/normalize.css@*":
   "integrity" "sha512-M0qqxAcwCsIVfpFQSlGN5XjXWu8l5JDZN+fPt1LeW5SZexQTgnaEvgXAY+CeygRw0EeppWHi12JxESWiWrB0Sg=="
